@@ -1,0 +1,111 @@
+here's a possible list of tables and their attributes based on the requirements you've mentioned:
+You could create additional columns in the Users table to indicate whether a user is a moderator or an admin. For example:
+Alternatively, if you want to have separate tables for moderators and admins, you could create additional tables:
+In this case, you would need to modify the Borrow history table to include a "borrower_type" column that distinguishes between regular users, students, faculties, moderators, and admins.
+
+
+Users:
+    user_id (unique identifier)
+    name
+    email
+    address
+    username
+    password (hashed and salted)
+    user_type (regular user, student, faculty)
+    is_moderator (boolean, indicating whether the user is a moderator)
+    is_admin (boolean, indicating whether the user is an admin)
+
+Moderators:
+    moderator_id (unique identifier)
+    name
+    email
+    address
+    username
+    password (hashed and salted)
+Admins:
+    admin_id (unique identifier)
+    name
+    email
+    address
+    username
+    password (hashed and salted)
+
+Books:
+    book_id (unique identifier)
+    title
+    author_name
+    publisher_name
+    ISBN
+    publication_date
+    number_of_pages
+    category
+Authors:
+    author_id (unique identifier)
+    name
+    date_of_birth
+    biography
+
+Publishers:
+    publisher_id (unique identifier)
+    name
+    location
+    contact_information
+
+Borrow history:
+    borrow_id (unique identifier)
+    book_id (foreign key to books table)
+    user_id (foreign key to users table)
+    borrow_date
+    due_date
+    return_date
+    borrower_type (student, faculty, or general user)
+
+Categories:
+    category_id (unique identifier)
+    name
+
+Reviews:
+    review_id (unique identifier)
+    book_id (foreign key to books table)
+    user_id (foreign key to users table)
+    review_text
+    review_date
+
+Courses:
+    course_id (unique identifier)
+    title
+    description
+    instructor_name
+    department_name
+    faculty_name
+    course_url (the URL of the course page)
+    start_date
+    end_date
+    
+Course_files:
+    file_id (unique identifier)
+    course_id (foreign key to Courses table)
+    file_name
+    file_type (e.g., PDF, DOCX, PPTX, etc.)
+    file_data (the binary data of the file)
+
+Departments:
+     department_id (unique identifier)
+     name
+     description
+
+Faculties:
+    faculty_id (unique identifier)
+    name
+    email
+    department_id (foreign key to departments table)
+    office_location
+
+Students:
+    student_id (unique identifier)
+    name
+    email
+    address
+    enrollment_date
+    graduation_date (if applicable)
+
