@@ -38,6 +38,7 @@ CREATE TABLE Books (
   number_of_pages INT,
   category VARCHAR(255)
 );
+ALTER TABLE books ADD COLUMN pdf_file BLOB;
 
 CREATE TABLE Authors (
   author_id INT PRIMARY KEY,

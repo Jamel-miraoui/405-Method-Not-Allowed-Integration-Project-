@@ -1,15 +1,41 @@
+<!-- //dispay all books from data base file  -->
+<?php
+// Connect to the database
+$host = 'localhost';
+$username = 'sammy';
+$password = 'password';
+$dbname = 'BEISETSO_db';
+
+$dsn = "mysql:host=$host;dbname=$dbname";
+$options = array(
+    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+);
+
+try {
+    $db = new PDO($dsn, $username, $password, $options);
+} catch(PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+}
+
+// Get the books from the database
+$query = "SELECT * FROM Books";
+$books = $db->query($query)->fetchAll(PDO::FETCH_ASSOC);
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Books | Library</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Books</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/booksstyle.css">
 </head>
 <body>
-<header>
-		<h1>Library</h1>
+    
+    <header>
+    <h1>Books</h1>
 		<nav>
 			<ul>
-				<li><a href="index.php">Home</a></li>
+				<li><a href="#">Home</a></li>
 				<li><a href="books.php">Books</a></li>
 				<li><a href="Courses.php">Courses</a></li>
 				<li><a href="#">Borrow History</a></li>
@@ -17,67 +43,40 @@
 			</ul>
 		</nav>
 	</header>
-	<main>
-		<div class="container">
-			<h2>Books</h2>
-			<form action="#" method="GET">
-				<input type="text" name="search" placeholder="Search...">
-				<button type="submit">Go</button>
-			</form>
-			<div class="books">
-				<div class="book">
-					<img src="resorses/p3.jpeg" width="200">
-					<h3>The Catcher in the Rye</h3>
-					<p>by J.D. Salinger</p>
-					<p>Published by Little, Brown and Company</p>
-					<p>ISBN: 9780316769174</p>
-					<p>Publication Date: 07/16/1951</p>
-					<p>Number of Pages: 277</p>
-					<p>Category: Fiction</p>
-					<a href="#">Borrow</a>
-				</div>
-                <div class="books">
-				<div class="book">
-					<img src="resorses/p4.jpg"  width="200">
-					<h3>The Catcher in the Rye</h3>
-					<p>by J.D. Salinger</p>
-					<p>Published by Little, Brown and Company</p>
-					<p>ISBN: 9780316769174</p>
-					<p>Publication Date: 07/16/1951</p>
-					<p>Number of Pages: 277</p>
-					<p>Category: Fiction</p>
-					<a href="#">Borrow</a>
-				</div>
-				<div class="book">
-					<img src="resorses/p2.jpeg" width="200">
-					<h3>1984</h3>
-					<p>by George Orwell</p>
-					<p>Published by Harvill Secker</p>
-					<p>ISBN: 9781846553265</p>
-					<p>Publication Date: 06/08/1949</p>
-					<p>Number of Pages: 328</p>
-					<p>Category: Fiction</p>
-					<a href="#">Borrow</a>
-				</div>
-				<div class="book">
-					<img src="resorses/p1.jpeg" width="200">
-					<h3>To Kill a Mockingbird</h3>
-					<p>by Harper Lee</p>
-					<p>Published by J. B. Lippincott & Co.</p>
-					<p>ISBN: 9780061120084</p>
-					<p>Publication Date: 07/11/1960</p>
-					<p>Number of Pages: 281</p>
-					<p>Category: Fiction</p>
-					<a href="#">Borrow</a>
-				</div>
-				<!-- add more books here -->
-			</div>
-		</div>
-	</main>
-	<footer>
-		<div class="container">
-			<p>&copy; 2023 Library</p>
-		</div>
-	</footer>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Publisher</th>
+            <th>ISBN</th>
+            <th>Publication Date</th>
+            <th>Number of Pages</th>
+            <th>Category</th>
+            <th>Download</th>
+			<th>Read Online</th>
+        </tr>
+        <!-- dispaly al books in db secton -->
+        <?php foreach ($books as $book): ?>
+        <tr>
+            <td><?php echo $book['book_id']; ?></td>
+            <td><a href="book.php?id=<?php echo $book['book_id']; ?>"><?php echo $book['title']; ?></a></td>
+            <td><?php echo $book['author_name']; ?></td>
+            <td><?php echo $book['publisher_name']; ?></td>
+            <td><?php echo $book['ISBN']; ?></td>
+            <td><?php echo $book['publication_date']; ?></td>
+            <td><?php echo $book['number_of_pages']; ?></td>
+            <td><?php echo $book['category']; ?></td>
+            <!-- the download book secton -->
+            <?php
+            echo "<td><a class='button' href='" . $row["book_url"] . "' download>Download</a></td>";
+			echo "<td><a class='button' href='" . $row["book_url"] . "' target='_blank'>Read Online</a></td>";
+			echo "</tr>";
+            ?>
+
+        </tr>
+        <?php endforeach; ?>
+    </table>
 </body>
 </html>
