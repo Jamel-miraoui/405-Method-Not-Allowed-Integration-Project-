@@ -48,7 +48,19 @@ h2 {
 }
 
 .book {
-	margin: 10px;
+	margin: 71px;
+	margin-top: 10px;
+	margin-bottom: 20px;
 	padding: 10px;
-	background-color: #f9f9
+	background-color: rgba(137, 134, 134, 0.6)
+}
+.course {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+a {
+    display: block;
+    margin-top: 10px;
 }

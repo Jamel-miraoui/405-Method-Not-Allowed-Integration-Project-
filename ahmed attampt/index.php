@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Library</title>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 	<header>
@@ -12,7 +12,7 @@
 			<ul>
 				<li><a href="#">Home</a></li>
 				<li><a href="books.php">Books</a></li>
-				<li><a href="#">Courses</a></li>
+				<li><a href="Courses.php">Courses</a></li>
 				<li><a href="#">Borrow History</a></li>
 				<li><a href="#">Login</a></li>
 			</ul>
@@ -25,6 +25,11 @@
 			<div class="book-container">
 				<div class="book">
 					<img src="resorses/p4.jpg" alt="Book 1" width="300">
+					<h3>Book 1 Title</h3>
+					<p>Author Name</p>
+				</div>
+				<div class="book">
+					<img src="resorses/p2.jpeg" alt="Book 1" width="300">
 					<h3>Book 1 Title</h3>
 					<p>Author Name</p>
 				</div>

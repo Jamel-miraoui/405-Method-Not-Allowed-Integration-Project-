@@ -2,22 +2,20 @@
 <html>
 <head>
 	<title>Books | Library</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-	<header>
-		<div class="container">
-			<nav>
-				<ul>
-					<li><a href="index.php">Home</a></li>
-					<li class="active"><a href="#">Books</a></li>
-					<li><a href="courses.php">Courses</a></li>
-					<li><a href="about.php">About</a></li>
-					<li><a href="contact.php">Contact</a></li>
-				</ul>
-			</nav>
-			<h1>Library</h1>
-		</div>
+<header>
+		<h1>Library</h1>
+		<nav>
+			<ul>
+				<li><a href="index.php">Home</a></li>
+				<li><a href="books.php">Books</a></li>
+				<li><a href="Courses.php">Courses</a></li>
+				<li><a href="#">Borrow History</a></li>
+				<li><a href="#">Login</a></li>
+			</ul>
+		</nav>
 	</header>
 	<main>
 		<div class="container">
