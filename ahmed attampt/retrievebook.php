@@ -1,6 +1,6 @@
 <?php 
 // Query the database for the book
-$stmt = $pdo->prepare("SELECT * FROM books WHERE book_id = ?");
+$stmt = $pdo->prepare("SELECT * FROM books WHERE book_id = $msg");
 $stmt->execute([$book_id]);
 $book = $stmt->fetch();
 

@@ -10,7 +10,7 @@
 		<h1>Library</h1>
 		<nav>
 			<ul>
-				<li><a href="#">Home</a></li>
+				<li><a href="index.php">Home</a></li>
 				<li><a href="books.php">Books</a></li>
 				<li><a href="Courses.php">Courses</a></li>
 				<li><a href="#">Borrow History</a></li>

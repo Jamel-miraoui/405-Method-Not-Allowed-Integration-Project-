@@ -30,7 +30,7 @@
             
             //retrieve course data from database
             $sql = "SELECT * FROM Courses";
-            $result = mysqli_query($conn, $sql);
+            $result = mysqli_query($db, $sql);
             
             //display course data
             if (mysqli_num_rows($result) > 0) {
@@ -41,6 +41,8 @@
                     echo "<p><strong>Department:</strong> " . $row["department_name"] . "</p>";
                     echo "<p><strong>Faculty:</strong> " . $row["faculty_name"] . "</p>";
                     echo "<p>" . $row["description"] . "</p>";
+                    
+                    // not sure about this
                     echo "<a href='" . $row["course_url"] . "' target='_blank'>View Course</a>";
                     echo "</div>";
                 }

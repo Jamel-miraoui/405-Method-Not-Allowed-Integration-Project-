@@ -1,21 +1,9 @@
 <!-- //dispay all books from data base file  -->
 <?php
 // Connect to the database
-$host = 'localhost';
-$username = 'sammy';
-$password = 'password';
-$dbname = 'BEISETSO_db';
-
-$dsn = "mysql:host=$host;dbname=$dbname";
-$options = array(
-    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-);
-
-try {
-    $db = new PDO($dsn, $username, $password, $options);
-} catch(PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
-}
+ini_set("display_errors",'1');
+error_reporting(E_ALL);
+require_once('connbd.php');
 
 // Get the books from the database
 $query = "SELECT * FROM Books";
@@ -35,7 +23,7 @@ $books = $db->query($query)->fetchAll(PDO::FETCH_ASSOC);
     <h1>Books</h1>
 		<nav>
 			<ul>
-				<li><a href="#">Home</a></li>
+				<li><a href="index.php">Home</a></li>
 				<li><a href="books.php">Books</a></li>
 				<li><a href="Courses.php">Courses</a></li>
 				<li><a href="#">Borrow History</a></li>
@@ -70,8 +58,8 @@ $books = $db->query($query)->fetchAll(PDO::FETCH_ASSOC);
             <td><?php echo $book['category']; ?></td>
             <!-- the download book secton -->
             <?php
-            echo "<td><a class='button' href='" . $row["book_url"] . "' download>Download</a></td>";
-			echo "<td><a class='button' href='" . $row["book_url"] . "' target='_blank'>Read Online</a></td>";
+            $ID= $book['book_id'];
+			echo "<td><a class='button' href='target='retrievebook.php?msg=$ID'>Read Online</a></td>";
 			echo "</tr>";
             ?>
 
