@@ -39,6 +39,7 @@ CREATE TABLE Books (
   category VARCHAR(255)
 );
 ALTER TABLE books ADD COLUMN pdf_file BLOB;
+ALTER TABLE books ADD COLUMN book_cover BLOB;
 
 CREATE TABLE Authors (
   author_id INT auto_increment PRIMARY KEY,
@@ -92,6 +93,8 @@ CREATE TABLE Courses (
   start_date DATE,
   end_date DATE
 );
+ALTER TABLE Courses ADD COLUMN pdf_cours BLOB;
+ALTER TABLE Courses ADD COLUMN cours_cover BLOB;
 
 CREATE TABLE Course_files (
   file_id INT auto_increment PRIMARY KEY,

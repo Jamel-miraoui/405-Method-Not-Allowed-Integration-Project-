@@ -31,7 +31,9 @@ $books = $db->query($query)->fetchAll(PDO::FETCH_ASSOC);
 			</ul>
 		</nav>
 	</header>
-
+<div>
+<a class='button' href="uplodebookform.php">Read Online</a>
+</div>
     <table>
         <tr>
             <th>ID</th>
