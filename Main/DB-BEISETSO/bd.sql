@@ -95,7 +95,6 @@ CREATE TABLE Courses (
 );
 ALTER TABLE Courses ADD COLUMN pdf_cours BLOB;
 ALTER TABLE Courses ADD COLUMN cours_cover BLOB;
-
 CREATE TABLE Course_files (
   file_id INT auto_increment PRIMARY KEY,
   course_id INT,
