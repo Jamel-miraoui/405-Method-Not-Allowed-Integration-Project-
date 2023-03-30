@@ -23,7 +23,7 @@ $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
     // User has logged in successfully
-    header("Location: hello.php");
+    header("Location: ../Index.html");
 } else {
     // Login failed
     echo "Invalid username or password.";
