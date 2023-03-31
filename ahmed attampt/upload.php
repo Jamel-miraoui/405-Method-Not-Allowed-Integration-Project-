@@ -1,4 +1,6 @@
 <?php
+ini_set("display_errors",'1');
+error_reporting(E_ALL);
 // Check if form was submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   
@@ -37,23 +39,40 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $target_file = $target_dir . $new_file_name;
     
     // Check if file is valid PDF
-    if ($file_extension != "pdf") {
-      echo "Error: Only PDF files are allowed.";
-    }
-    // Upload file to server
-    else if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-      // Insert book data and file path into database
-      $sql = "INSERT INTO books (title, author_name, publisher_name, ISBN, publication_date, number_of_pages, category, pdf_file, cover_image) 
-              VALUES ('$title', '$author_name', '$publisher_name', '$ISBN', '$publication_date', '$number_of_pages', '$category', '$target_file', '$cover_image')";
-      
-      if (mysqli_query($conn, $sql)) {
-        echo "Book uploaded successfully.";
-      } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-      }
-    } else {
-      echo "Error: File upload failed.";
-    }
+   
+// Check if file was uploaded
+     if (isset($_FILES['fileToUpload'])) {
+       // Get file name
+       $fileName = basename($_FILES['fileToUpload']['name']);
+     
+       // Other form data
+       $title = $_POST['title'];
+       $author = $_POST['author'];
+       $publisher = $_POST['publisher'];
+       $isbn = $_POST['isbn'];
+       $publication_date = $_POST['publication_date'];
+       $num_pages = $_POST['num_pages'];
+       $category = $_POST['category'];
+     
+       // Upload file to server
+       $targetDir = "uploads/";
+       $targetFile = $targetDir . $fileName;
+       move_uploaded_file($_FILES['fileToUpload']['tmp_name'], $targetFile);
+     
+       // Insert data into database
+       $conn = mysqli_connect("localhost", "username", "password", "lib_db");
+       $query = "INSERT INTO Books (title, author_name, publisher_name, ISBN, publication_date, number_of_pages, category, pdf_cours, cours_cover) VALUES ('$title', '$author', '$publisher', '$isbn', '$publication_date', $num_pages, '$category', '$targetFile', '$coverImage')";
+       mysqli_query($conn, $query);
+       mysqli_close($conn);
+     
+       // Redirect to success page
+       header("Location: success.php");
+       exit;
+     } else {
+       echo "Error: No file uploaded.";
+     }
+
+
   }
   
   // Close database connection
