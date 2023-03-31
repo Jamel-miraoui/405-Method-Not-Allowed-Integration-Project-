@@ -31,7 +31,7 @@
   <input type="text" name="category" id="category"><br>
   
   <label for="pdf_file">PDF File:</label>
-  <input type="file" name="pdf_file" id="pdf_file"><br>
+  <input type="file" name="pdf_file"id="pdf_file"><br>
   
   <label for="cover_image">Cover Image:</label>
   <input type="file" name="cover_image" id="cover_image"><br>
