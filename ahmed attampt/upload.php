@@ -1,4 +1,6 @@
 <?php
+ini_set("display_errors",'1');
+error_reporting(E_ALL);
 // Check if form was submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   
@@ -13,48 +15,47 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
   }
+   
+// Check if file was uploaded
+if (isset($_FILES['pdf_file'])) {
+  // Get file name
+  $fileName = basename($_FILES['pdf_file']['name']);
   
-  // Get form data
-  $title = mysqli_real_escape_string($conn, $_POST["title"]);
-  $author_name = mysqli_real_escape_string($conn, $_POST["author_name"]);
-  $publisher_name = mysqli_real_escape_string($conn, $_POST["publisher_name"]);
-  $ISBN = mysqli_real_escape_string($conn, $_POST["ISBN"]);
-  $publication_date = mysqli_real_escape_string($conn, $_POST["publication_date"]);
-  $number_of_pages = mysqli_real_escape_string($conn, $_POST["number_of_pages"]);
-  $category = mysqli_real_escape_string($conn, $_POST["category"]);
+  // Other form data
+  $title = $_POST['title'];
+  $author_name = $_POST['author_name'];
+  $publisher_name = $_POST['publisher_name'];
+  $ISBN = $_POST['ISBN'];
+  $publication_date = $_POST['publication_date'];
+  $number_of_pages = $_POST['number_of_pages'];
+  $category = $_POST['category'];
   
-  // Check if file was uploaded
-  if ($_FILES["fileToUpload"]["name"]) {
-    // Get file name and extension
-    $file_name = basename($_FILES["fileToUpload"]["name"]);
-    $file_extension = pathinfo($file_name, PATHINFO_EXTENSION);
-    
-    // Generate new file name
-    $new_file_name = uniqid() . '.' . $file_extension;
-    
-    // Set file upload directory
-    $target_dir = "uploads/";
-    $target_file = $target_dir . $new_file_name;
-    
-    // Check if file is valid PDF
-    if ($file_extension != "pdf") {
-      echo "Error: Only PDF files are allowed.";
-    }
-    // Upload file to server
-    else if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-      // Insert book data and file path into database
-      $sql = "INSERT INTO books (title, author_name, publisher_name, ISBN, publication_date, number_of_pages, category, pdf_file, cover_image) 
-              VALUES ('$title', '$author_name', '$publisher_name', '$ISBN', '$publication_date', '$number_of_pages', '$category', '$target_file', '$cover_image')";
-      
-      if (mysqli_query($conn, $sql)) {
-        echo "Book uploaded successfully.";
-      } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-      }
-    } else {
-      echo "Error: File upload failed.";
-    }
+  // Upload file to server
+  $targetDir = "uploads/";
+  $targetFile = $targetDir . $fileName;
+  move_uploaded_file($_FILES['pdf_file']['tmp_name'], $targetFile);
+  
+  // Upload cover image to server
+  $coverImage = "";
+  if (isset($_FILES['cover_image'])) {
+    $coverFileName = basename($_FILES['cover_image']['name']);
+    $coverTargetFile = $targetDir . $coverFileName;
+    move_uploaded_file($_FILES['cover_image']['tmp_name'], $coverTargetFile);
+    $coverImage = $coverTargetFile;
   }
+  
+  // Insert data into database
+  $conn = mysqli_connect("localhost", "username", "password", "lib_db");
+  $query = "INSERT INTO Books (title, author_name, publisher_name, ISBN, publication_date, number_of_pages, category, pdf_file, cover_image) VALUES ('$title', '$author_name', '$publisher_name', '$ISBN', '$publication_date', '$number_of_pages', '$category', '$targetFile', '$coverImage')";
+  mysqli_query($conn, $query);
+  mysqli_close($conn);
+  
+  // Redirect to success page
+  header("Location: books.php");
+  exit;
+} else {
+  echo "Error: No file uploaded.";
+}
   
   // Close database connection
   mysqli_close($conn);
