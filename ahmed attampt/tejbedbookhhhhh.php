@@ -11,6 +11,7 @@ if (!$conn) {
     die("Connexion échouée : " . mysqli_connect_error());
 }
 
+//add more graphic fetuses like Mor html and css 
 
 $sql = "SELECT * FROM Books";
 $result = mysqli_query($conn, $sql);
