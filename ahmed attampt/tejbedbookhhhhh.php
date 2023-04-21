@@ -17,6 +17,7 @@ $sql = "SELECT * FROM Books";
 $result = mysqli_query($conn, $sql);
 
 // Affichage des données sous forme de tableau
+// add css for this placements full table stiling
 echo "<table>";
 echo "<tr><th>Titre</th><th>Auteur</th><th>Numero des pages</th><th>maison de publication</th><th>telecharger</th></tr>";
 while ($row = mysqli_fetch_assoc($result)) {
