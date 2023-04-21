@@ -1,3 +1,4 @@
+//this all rong change to other upload code 
 <?php
 // Get the uploaded file data
 $file_data = file_get_contents($_FILES['pdf_file']['tmp_name']);
