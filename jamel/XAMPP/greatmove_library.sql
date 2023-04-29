@@ -33,7 +33,8 @@ CREATE TABLE `books` (
   `author` varchar(255) NOT NULL,
   `description` text DEFAULT NULL,
   `file_path` varchar(255) NOT NULL,
-  `teacher_id` int(11) NOT NULL,
+  `cover_path` varchar(255) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -149,7 +150,7 @@ ALTER TABLE `users`
 -- Constraints for table `books`
 --
 ALTER TABLE `books`
-  ADD CONSTRAINT `books_ibfk_1` FOREIGN KEY (`teacher_id`) REFERENCES `users` (`id`);
+  ADD CONSTRAINT `books_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
 --
 -- Constraints for table `lessons`

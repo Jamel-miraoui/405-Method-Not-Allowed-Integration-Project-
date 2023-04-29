@@ -3,7 +3,7 @@
     $host = 'localhost';
     $username = 'sammy';
     $password = 'password';
-    $dbname = 'BEISETSO_db';
+    $dbname = 'greatmove_library';
     
     $dsn = "mysql:host=$host;dbname=$dbname";
     $options = array(

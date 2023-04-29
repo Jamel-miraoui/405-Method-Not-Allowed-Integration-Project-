@@ -1,3 +1,12 @@
+<?php
+ini_set("display_errors",'1');
+error_reporting(E_ALL);
+require_once('connbd.php');
+
+// Get the books from the database
+$query = "SELECT * FROM lessons";
+$courses = $db->query($query)->fetchAll(PDO::FETCH_ASSOC); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,41 +27,33 @@
 			</ul>
 		</nav>
 	</header>
-    <main>
-        <?php
-            //connect to the database
-            $conn = mysqli_connect("localhost", "sammy", "password", "BEISETSO_db");
-            
-            //check connection
-            if (!$conn) {
-                die("Connection failed: " . mysqli_connect_error());
-            }
-            
-            //retrieve course data from database
-            $sql = "SELECT * FROM Courses";
-            $result = mysqli_query($db, $sql);
-            
-            //display course data
-            if (mysqli_num_rows($result) > 0) {
-                while($row = mysqli_fetch_assoc($result)) {
-                    echo "<div class='course'>";
-                    echo "<h2>" . $row["title"] . "</h2>";
-                    echo "<p><strong>Instructor:</strong> " . $row["instructor_name"] . "</p>";
-                    echo "<p><strong>Department:</strong> " . $row["department_name"] . "</p>";
-                    echo "<p><strong>Faculty:</strong> " . $row["faculty_name"] . "</p>";
-                    echo "<p>" . $row["description"] . "</p>";
-                    
-                    // not sure about this
-                    echo "<a href='" . $row["course_url"] . "' target='_blank'>View Course</a>";
-                    echo "</div>";
-                }
-            } else {
-                echo "<p>No courses available at this time.</p>";
-            }
-            
-            //close database connection
-            mysqli_close($conn);
-        ?>
-    </main>
+
+    <table>
+        <tr>
+            <th>Techer name</th>
+            <th>Department</th>
+            <th>Level degree</th>
+            <th>Topec</th>
+            <th>Title</th>
+            <th>Description</th>
+			<th>Read Now</th>
+        </tr>
+        <!-- dispaly al books in db secton -->
+        <?php foreach ($courses as $course): ?>
+        <tr>
+            <td><?php echo $course['teacher_id']; ?></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><?php echo $course['title']; ?></td>
+            <td><?php echo $course['teacher_id']; ?></td>
+            <td><?php echo $course['description']; ?></td>
+            <td><a href="<?php echo $course['file_path']; ?>">PDF File</a></td>
+            <!-- the download book secton -->
+
+        </tr>
+        <?php endforeach; ?>
+    </table>
+
 </body>
 </html>
