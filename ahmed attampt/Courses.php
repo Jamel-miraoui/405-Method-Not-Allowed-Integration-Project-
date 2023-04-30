@@ -13,6 +13,7 @@ $courses = $db->query($query)->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <title>Courses</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/booksstyle.css">
 </head>
 <body>
 <header>
@@ -22,12 +23,13 @@ $courses = $db->query($query)->fetchAll(PDO::FETCH_ASSOC);
 				<li><a href="index.php">Home</a></li>
 				<li><a href="books.php">Books</a></li>
 				<li><a href="Courses.php">Courses</a></li>
-				<li><a href="#">Borrow History</a></li>
+				<li><a href="#">about us</a></li>
 				<li><a href="#">Login</a></li>
 			</ul>
 		</nav>
-	</header>
 
+	</header>
+    <a class='button' href="uplodecourseform.php"><span>&#43;</span>Add<br>Course</a>
     <table>
         <tr>
             <th>Techer name</th>
@@ -42,11 +44,9 @@ $courses = $db->query($query)->fetchAll(PDO::FETCH_ASSOC);
         <?php foreach ($courses as $course): ?>
         <tr>
             <td><?php echo $course['teacher_id']; ?></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td><?php echo $course['title']; ?></td>
-            <td><?php echo $course['teacher_id']; ?></td>
+            <td><?php echo $course['department_id']; ?></td>
+            <td><?php echo $course['class_level']; ?></td>
+            <td><?php echo $course['topec']; ?></td>
             <td><?php echo $course['description']; ?></td>
             <td><a href="<?php echo $course['file_path']; ?>">PDF File</a></td>
             <!-- the download book secton -->
