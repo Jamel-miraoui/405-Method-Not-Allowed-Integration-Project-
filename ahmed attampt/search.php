@@ -1,39 +1,43 @@
 <?php
 
-// connect to the database
-$conn = mysqli_connect("localhost", "username", "password", "greatmove library");
+$servername = "localhost";
+$username = "sammy";
+$password = "password";
+$dbname = "greatmove_library";
 
-// check if the form has been submitted
-if (isset($_GET['search'])) {
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-  // retrieve the search query
-  $query = mysqli_real_escape_string($conn, $_GET['search']);
-
-  // build the SQL query
-  $sql = "SELECT * FROM books WHERE CONCAT(title, author, description) LIKE '%$query%' UNION SELECT * FROM lessons WHERE CONCAT(title, description) LIKE '%$query%' UNION SELECT * FROM users WHERE CONCAT(username, email) LIKE '%$query%'";
-
-  // execute the query
-  $result = mysqli_query($conn, $sql);
-
-  // check if any results were found
-  if (mysqli_num_rows($result) > 0) {
-
-    // loop through the results and display them to the user
-    while ($row = mysqli_fetch_assoc($result)) {
-      echo $row['title'];
-      echo $row['author'];
-      // and so on...
-    }
-
-  } else {
-
-    // no results found
-    echo "No results found.";
-
-  }
-
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
 }
 
-?>
+         $sql = "SELECT 'book' AS type, title, author, description, cover_path AS image, file_path AS link
+         FROM books
+         WHERE title LIKE '%search_term%' OR author LIKE '%search_term%' OR description LIKE '%search_term%'
+         UNION
+         SELECT 'lesson' AS type, title, '' AS author, description, '' AS image, file_path AS link
+         FROM lessons
+         WHERE title LIKE '%search_term%' OR description LIKE '%search_term%'
+         UNION
+         SELECT 'user' AS type, username AS title, email AS author, '' AS description, '' AS image, '' AS link
+         FROM users
+         WHERE username LIKE '%search_term%' OR email LIKE '%search_term%'";
 
-<!-- the search form -->
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+  echo "<table>";
+  echo "<tr><th>Book ID</th><th>Title</th><th>Author</th><th>User</th><th>Lesson Title</th><th>Progress</th></tr>";
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+    echo "<tr><td>" . $row["id"]. "</td><td>" . $row["title"]. "</td><td>" . $row["author"]. "</td><td>" . $row["username"]. "</td><td>" . $row["lesson_title"]. "</td><td>" . $row["progress"]. "</td></tr>";
+  }
+  echo "</table>";
+} else {
+  echo "0 results";
+}
+
+$conn->close();
+?>

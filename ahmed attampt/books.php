@@ -46,7 +46,7 @@ $books = $db->query($query)->fetchAll(PDO::FETCH_ASSOC);
         <!-- dispaly al books in db secton -->
         <?php foreach ($books as $book): ?>
         <tr>
-        <td><img src="<?php echo $book['cover_path']; ?>"></td>
+        <td><img src="<?php echo $book['cover_path']; ?>" width="210"></td>
             <td><?php echo $book['title']; ?></td>
             <td><?php echo $book['author']; ?></td>
             <td><?php echo $book['description']; ?></td>
