@@ -38,12 +38,12 @@
 
           <div>
           <label for="author_name">Topec:</label>
-          <input type="text" name="author_name" id="author_name" class="formbold-form-input"><br>
+          <input type="text" name="topec" id="topec" class="formbold-form-input"><br>
           </div>
 
           <div>
           <label for="category">Department:</label>
-          <select id="description" name="description" class="formbold-form-input">
+          <select id="department" name="department" class="formbold-form-input">
                <option value="IT">IT</option>
                <option value="GE">GE</option>
                <option value="GM">GM</option>
@@ -66,7 +66,7 @@
 
           <div>
           <label for="category">Description:</label>
-          <input type="select" name="category" id="category" class="formbold-form-input"><br>
+          <input type="select" name="description" id="description" class="formbold-form-input"><br>
           </div>
 
 

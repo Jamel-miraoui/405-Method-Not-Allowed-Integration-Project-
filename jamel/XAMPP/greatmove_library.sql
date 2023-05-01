@@ -53,6 +53,11 @@ CREATE TABLE `lessons` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+ALTER TABLE  lessons  
+ADD COLUMN department_id VARCHAR(50) NOT NULL;
+ADD COLUMN level int NOT NULL;
+ADD COLUMN topec VARCHAR(50) NOT NULL;
+
 -- --------------------------------------------------------
 
 --
