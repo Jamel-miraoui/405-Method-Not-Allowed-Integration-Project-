@@ -53,10 +53,8 @@ CREATE TABLE `lessons` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-ALTER TABLE  lessons  
-ADD COLUMN department_id VARCHAR(50) NOT NULL;
-ADD COLUMN level int NOT NULL;
-ADD COLUMN topec VARCHAR(50) NOT NULL;
+ 
+
 
 -- --------------------------------------------------------
 
@@ -170,6 +168,13 @@ ALTER TABLE `student_progress`
   ADD CONSTRAINT `student_progress_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `users` (`id`),
   ADD CONSTRAINT `student_progress_ibfk_2` FOREIGN KEY (`lesson_id`) REFERENCES `lessons` (`id`);
 COMMIT;
+
+ALTER TABLE  lessons
+ADD COLUMN department_id VARCHAR(50) NOT NULL;
+ALTER TABLE  lessons
+ADD COLUMN level int NOT NULL;
+ALTER TABLE  lessons
+ADD COLUMN topec VARCHAR(50) NOT NULL;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
