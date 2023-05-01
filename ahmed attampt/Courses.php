@@ -43,10 +43,20 @@ $courses = $db->query($query)->fetchAll(PDO::FETCH_ASSOC);
         <!-- dispaly al books in db secton -->
         <?php foreach ($courses as $course): ?>
         <tr>
-            <td><?php echo $course['teacher_id']; ?></td>
+            <?php
+            $query2 = "SELECT username FROM users WHERE id = ?";
+            $stmt = $db->prepare($query2);
+            $stmt->execute([$course['teacher_id']]);
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+            
+            // Access the username value
+            $username = $result['username'];
+            ?>
+            <td><?php echo $result['username']; ?></td>
             <td><?php echo $course['department_id']; ?></td>
             <td><?php echo $course['class_level']; ?></td>
             <td><?php echo $course['topec']; ?></td>
+            <td><?php echo $course['title']; ?></td>
             <td><?php echo $course['description']; ?></td>
             <td><a href="<?php echo $course['file_path']; ?>">PDF File</a></td>
             <!-- the download book secton -->

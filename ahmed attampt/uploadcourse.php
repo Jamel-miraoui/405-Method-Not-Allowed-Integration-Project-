@@ -30,15 +30,17 @@ if (isset($_FILES['pdf_file'])) {
   $class = $_POST['class'];
   $description = $_POST['description'];
   
+
   // Upload file to server
   $targetDir = "uploads/";
   $targetFile = $targetDir . $fileName;
   move_uploaded_file($_FILES['pdf_file']['tmp_name'], $targetFile);
   
-  $insert = $db->query("INSERT INTO lessons (title, description, file_path, teacher_id, department_id, topec, class_level) VALUES ('$title', '$description', '$targetFil',1, '$department','$topec', 1)");
+  $insert = $db->query("INSERT INTO lessons (title, description, file_path, teacher_id, department_id, topec, class_level) VALUES ('$title', '$description', '$targetFile',1, '$department','$topec', 1)");
   if($insert){
     $statusMsg = "The file ".$fileName. " has been uploaded successfully.";
 	echo"file uploded secssefully";
+	echo $targetFile;
    }else{
     $statusMsg = "File upload failed, please try again.";}
 
