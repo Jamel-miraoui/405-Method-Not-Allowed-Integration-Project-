@@ -11,6 +11,10 @@
 <body>
 <header>
     <h1> Adding Books</h1>
+    <form method="get" action="search.php">
+  <input type="text" name="search" placeholder="Search...">
+  <input type="submit" value="Search">
+         </form>
 		<nav>
 			<ul>
 				<li><a href="index.php">Home</a></li>

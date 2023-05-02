@@ -18,6 +18,10 @@ $courses = $db->query($query)->fetchAll(PDO::FETCH_ASSOC);
 <body>
 <header>
 		<h1>Library</h1>
+        <form method="get" action="search.php">
+  <input type="text" name="search" placeholder="Search...">
+  <input type="submit" value="Search">
+         </form>
 		<nav>
 			<ul>
 				<li><a href="index.php">Home</a></li>
@@ -49,12 +53,28 @@ $courses = $db->query($query)->fetchAll(PDO::FETCH_ASSOC);
             $stmt->execute([$course['teacher_id']]);
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
             
-            // Access the username value
+            // Access the username value  echo $course['class_level']; 
             $username = $result['username'];
             ?>
             <td><?php echo $result['username']; ?></td>
             <td><?php echo $course['department_id']; ?></td>
-            <td><?php echo $course['class_level']; ?></td>
+            <td><?php
+            if ($course['class_level']>10) {
+                if ($course['class_level']==11) {
+                    echo "1er Master"; 
+                }else{ echo "2emm Master";}
+            }else{
+                if ($course['class_level']==1) {
+                    echo "1er";
+                }
+                if ($course['class_level']==2) {
+                    echo "2emme";
+                }if($course['class_level']==3) {
+                    echo "3emme";
+                }
+
+            } 
+            ?></td>
             <td><?php echo $course['topec']; ?></td>
             <td><?php echo $course['title']; ?></td>
             <td><?php echo $course['description']; ?></td>

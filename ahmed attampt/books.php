@@ -21,6 +21,10 @@ $books = $db->query($query)->fetchAll(PDO::FETCH_ASSOC);
     
     <header>
     <h1>Books</h1>
+    <form method="get" action="search.php">
+  <input type="text" name="search" placeholder="Search...">
+  <input type="submit" value="Search">
+         </form>
 		<nav>
 			<ul>
 				<li><a href="index.php">Home</a></li>
