@@ -27,9 +27,7 @@ $role = $_POST["role"];
 $stmt->bind_param("ssss", $username, $password, $email, $role);
 
 // Execute the statement and check for errors
-if ($stmt->execute() === FALSE) {
-    die("Error: " . $sql . "<br>" . $conn->error);
-}
+
 
 echo "New user created successfully";
 
