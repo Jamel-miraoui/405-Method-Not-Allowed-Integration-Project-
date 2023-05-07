@@ -14,7 +14,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-          
+include 'navANDhead.php';      
 $search_term = $_GET['search'];
 
 $sql = "SELECT * FROM books WHERE title LIKE '%" . $search_term . "%' OR description LIKE '%" . $search_term . "%' OR author LIKE '%" . $search_term . "%'";

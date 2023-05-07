@@ -4,6 +4,8 @@
 ini_set("display_errors",'1');
 error_reporting(E_ALL);
 require_once('connbd.php');
+//check sesson 
+require_once('sessonchek.php');
 
 // Get the books from the database
 $query = "SELECT * FROM books";
@@ -30,8 +32,8 @@ $books = $db->query($query)->fetchAll(PDO::FETCH_ASSOC);
 				<li><a href="index.php">Home</a></li>
 				<li><a href="books.php">Books</a></li>
 				<li><a href="Courses.php">Courses</a></li>
-				<li><a href="#">Borrow History</a></li>
-				<li><a href="#">Login</a></li>
+				<li><a href="logout.php">Dissconnect</a></li>
+				<li><a href="login.php">Login</a></li>
 			</ul>
 		</nav>
 	</header>
