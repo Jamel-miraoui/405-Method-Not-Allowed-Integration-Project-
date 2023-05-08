@@ -46,6 +46,8 @@ if (isset($_FILES['pdf_file'])) {
 
 } else {
   echo "Error: No file uploaded.";
+  mysqli_close($bd);
 }
+mysqli_close($bd);
 }
 ?>

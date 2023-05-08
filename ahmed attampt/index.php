@@ -50,6 +50,18 @@ require_once('sessonchek.php');
 					<h3>Book 3 Title</h3>
 					<p>Author Name</p>
 				</div>
+				<div class="book">
+					<img src="resorses/p1.jpeg" alt="Book 3" width="300">
+					<h3>Book 3 Title</h3>
+					<p>Author Name</p>
+				</div>
+				<div class="book">
+					<img src="resorses/p1.jpeg" alt="Book 3" width="300">
+					<h3>Book 3 Title</h3>
+					<p>Author Name</p>
+				</div>
+			  
+				
 			</div>
 		</section>
 		

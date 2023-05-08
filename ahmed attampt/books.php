@@ -49,18 +49,22 @@ $books = $db->query($query)->fetchAll(PDO::FETCH_ASSOC);
             <th>Description</th>
 			<th>Read Now</th>
         </tr>
+        <section>
+        <main>
+        <div class="book-container">
         <!-- dispaly al books in db secton -->
         <?php foreach ($books as $book): ?>
-        <tr>
-        <td><img src="<?php echo $book['cover_path']; ?>" width="210"></td>
-            <td><?php echo $book['title']; ?></td>
-            <td><?php echo $book['author']; ?></td>
-            <td><?php echo $book['description']; ?></td>
-            <td><a href="<?php echo $book['file_path']; ?>">PDF File</a></td>
-            <!-- the download book secton -->
 
-        </tr>
+                <div class="book">
+					<img src="<?php echo $book['cover_path']; ?>" alt="Book 3" width="300">
+					<h3><?php echo $book['title']; ?></h3>
+					<p><?php echo $book['author']; ?></p>
+                    <a href="<?php echo $book['file_path']; ?>">PDF File</a>
+				</div>
         <?php endforeach; ?>
     </table>
+    </div>
+        </section>
+        </main>
 </body>
 </html>
