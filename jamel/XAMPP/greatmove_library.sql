@@ -61,7 +61,7 @@ CREATE TABLE `lessons` (
 -- Table structure for table `lessonspenting`
 --
 
-CREATE TABLE `lessonspenting` (
+CREATE TABLE `lessonspending` (
   `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `description` text DEFAULT NULL,
@@ -79,7 +79,7 @@ CREATE TABLE `lessonspenting` (
 --
 -- Table structure for table `bookspenting`
 --
-CREATE TABLE `bookspenting` (
+CREATE TABLE `bookspending` (
 `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `author` varchar(255) NOT NULL,

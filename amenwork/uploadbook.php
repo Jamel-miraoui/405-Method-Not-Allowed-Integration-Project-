@@ -69,7 +69,7 @@ $stmt = $conn->prepare($query);
 $stmt->execute();
 
 if ($stmt->rowCount() == 0) {
-     $insert = $conn->query("INSERT INTO books (title, author, description, file_path, cover_path, user_id) VALUES ('$title', '$author_name', '$category', '$targetFile', '$coverImage', 1)");
+     $insert = $conn->query("INSERT INTO bookspending (title, author, description, file_path, cover_path, user_id) VALUES ('$title', '$author_name', '$category', '$targetFile', '$coverImage', 1)");
    
      if($insert){
        $statusMsg = "The file ".$fileName. " has been uploaded successfully.";
