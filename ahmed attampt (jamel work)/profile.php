@@ -151,9 +151,7 @@
                 <li>22 Years</li>
                 <li>Ultra Admin</li>
                 <li>
-                    <input type="button" value="update">
-                    <input type="button" value="delete">
-                    <input type="button" value="add">
+                    <a href="Src\phpFunction\UsersControle.php"><input type="button" value="User Manager"></a>
                 </li>
             </ul>
         </div>
