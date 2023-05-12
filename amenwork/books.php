@@ -38,6 +38,14 @@ $books = $conn->query($query)->fetchAll(PDO::FETCH_ASSOC);
 		</nav>
 	</header>
     <div>
+   
+    <label for="sort-by">Trier par :</label>
+    <select name="sort-by" id="sort-by">
+        <option value="page_count">Nombre de pages</option>
+        <option value="creation_date">Date de création</option>
+    </select>
+    <button type="submit">Filtrer</button>
+
 <a class='button' href="uplodebookform.php"><span>&#43;</span>Add<br>Book</a>
     </div>
     
