@@ -5,10 +5,13 @@ require_once('connbd.php');
 
 require_once('sessonchek.php');
 // Get the books from the database
+
 $query = "SELECT * FROM lessons";
 $courses = $db->query($query)->fetchAll(PDO::FETCH_ASSOC); 
+//navbar
+include 'navANDhead.php';
 ?>
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -33,7 +36,7 @@ $courses = $db->query($query)->fetchAll(PDO::FETCH_ASSOC);
 			</ul>
 		</nav>
 
-	</header>
+	</header> -->
     <a class='button' href="uplodecourseform.php"><span>&#43;</span>Add<br>Course</a>
     <table>
         <tr>
