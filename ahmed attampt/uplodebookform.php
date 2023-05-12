@@ -1,3 +1,6 @@
+<?php
+require_once('sessonchek.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,13 +14,17 @@
 <body>
 <header>
     <h1> Adding Books</h1>
+    <form method="get" action="search.php">
+  <input type="text" name="search" placeholder="Search...">
+  <input type="submit" value="Search">
+         </form>
 		<nav>
 			<ul>
 				<li><a href="index.php">Home</a></li>
 				<li><a href="books.php">Books</a></li>
 				<li><a href="Courses.php">Courses</a></li>
-				<li><a href="#">Borrow History</a></li>
-				<li><a href="#">Login</a></li>
+				<li><a href="logout.php">Dissconnect</a></li>
+				<li><a href="login.php">Login</a></li>
 			</ul>
 		</nav>
 	</header>
