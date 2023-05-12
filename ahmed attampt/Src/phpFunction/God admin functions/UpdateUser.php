@@ -12,7 +12,7 @@
 
 <?php
 	// check if the form has been submitted
-	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+	if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 		// retrieve the user ID from the form
 		$id = $_GET['id'];
 		
