@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>User Management System</title>
+	<link rel="stylesheet" href="..\css\UsersControle.css">
 </head>
 <body>
 	<form method="post">
