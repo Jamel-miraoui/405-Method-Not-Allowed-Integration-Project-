@@ -1,9 +1,7 @@
 <?php
 require_once('sessonchek.php');
-//navbar
-include 'navANDhead.php';
 ?>
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -26,7 +24,7 @@ include 'navANDhead.php';
 				<li><a href="login.php">Login</a></li>
 			</ul>
 		</nav>
-	</header> -->
+	</header>
 	
 	<main>
 		<section>

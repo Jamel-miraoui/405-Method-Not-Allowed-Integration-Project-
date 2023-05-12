@@ -6,15 +6,13 @@ error_reporting(E_ALL);
 require_once('connbd.php');
 //check sesson 
 require_once('sessonchek.php');
-//navbar
-include 'navANDhead.php';
 
 // Get the books from the database
 $query = "SELECT * FROM books";
-$books = $db->query($query)->fetchAll(PDO::FETCH_ASSOC);
+$books = $conn->query($query)->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Books</title>
@@ -38,8 +36,16 @@ $books = $db->query($query)->fetchAll(PDO::FETCH_ASSOC);
 				<li><a href="login.php">Login</a></li>
 			</ul>
 		</nav>
-	</header> -->
+	</header>
     <div>
+   
+    <label for="sort-by">Trier par :</label>
+    <select name="sort-by" id="sort-by">
+        <option value="page_count">Nombre de pages</option>
+        <option value="creation_date">Date de création</option>
+    </select>
+    <button type="submit">Filtrer</button>
+
 <a class='button' href="uplodebookform.php"><span>&#43;</span>Add<br>Book</a>
     </div>
     

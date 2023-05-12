@@ -57,6 +57,44 @@ CREATE TABLE `lessons` (
 
 
 -- --------------------------------------------------------
+--
+-- Table structure for table `lessonspenting`
+--
+
+CREATE TABLE `lessonspenting` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `description` text DEFAULT NULL,
+  `file_path` varchar(255) NOT NULL,
+  `teacher_id` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+ 
+
+
+-- --------------------------------------------------------
+
+
+--
+-- Table structure for table `bookspenting`
+--
+CREATE TABLE `bookspenting` (
+`id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `author` varchar(255) NOT NULL,
+  `description` text DEFAULT NULL,
+  `file_path` varchar(255) NOT NULL,
+  `cover_path` varchar(255) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
+
+ 
+
+
+-- --------------------------------------------------------
+
 
 --
 -- Table structure for table `student_progress`
