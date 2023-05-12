@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 $host = "localhost";
 $user = "root";
 $password = "";
-$database = "greatmove library";
+$database = "greatmove_library";
 $conn = new mysqli($host, $user, $password, $database);
 
 // Check for connection errors
@@ -27,9 +27,14 @@ $role = $_POST["role"];
 $stmt->bind_param("ssss", $username, $password, $email, $role);
 
 // Execute the statement and check for errors
-
+if ($stmt->execute() === FALSE) {
+    die("Error: " . $sql . "<br>" . $conn->error);
+}
 
 echo "New user created successfully";
+session_start();
+    $_SESSION['login']=$username;
+header("Location: ../../index.php");
 
 // Close the statement and connection
 $stmt->close();
