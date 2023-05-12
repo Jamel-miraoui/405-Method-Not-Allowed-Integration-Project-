@@ -13,13 +13,6 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-// Log in user
-$username = $_POST["username"];
-$password = $_POST["password"];
-
-$sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
-$result = mysqli_query($conn, $sql);
-
 $id = $_POST["id"];
 
 // checking if the id exists

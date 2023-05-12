@@ -16,9 +16,12 @@ if (!$conn) {
 // Log in user
 $username = $_POST["username"];
 $password = $_POST["password"];
+$email = $_POST["email"];
+$role = $_POST["role"];
+
 
  // Construct the SQL query to add the new user
- $sql = "INSERT INTO users (nom, prenom, class, login, password) VALUES ('$nom', '$prenom', '$class', '$login', '$password')";
+ $sql = "INSERT INTO users (username, password, email, role) VALUES ('$username', '$password', '$email', '$role')";
 
  // Execute the query and check if it was successful
  if (mysqli_query($conn, $sql)) {
