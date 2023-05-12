@@ -1,3 +1,9 @@
+<?php
+//chek sesson
+require_once('sessonchek.php');
+//navbar
+include 'navANDhead.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +14,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="profile.css">
 </head>
-
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
     body{
@@ -20,9 +25,7 @@
         justify-content: center;
     }
 
-    *{
-        box-sizing: border-box;
-    }
+    
 
     .container{
         display: flex;
@@ -96,45 +99,52 @@
         margin-top: 20px;
     }
 
-    @media screen and (max-width: 1068px) {
-        .container{
-            display: table;
-        }
+   /* CSS for button styles */
+.box ul li input[type="button"] {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #0d1425;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
-        .box{
-            width: 100%;
-        }
+.box ul li input[type="button"]:hover {
+    background-color: #ff6363;
+}
 
-        .About{
-            width: 100%;
-            margin: 0;
-            margin-top: 20px;
-        }
+.box ul li input[type="button"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #ff6363;
+}
 
-        .About h1{
-            text-align: center;
-        }
-            /* CSS for button styles */
-            .box ul li input[type="button"] {
-        padding: 10px 20px;
-        font-size: 18px;
-        background-color: #0d1425;
-        color: #fff;
-        border: none;
-        border-radius: 50px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
+@media screen and (max-width: 1068px) {
+    .container{
+        display: table;
     }
 
-    .box ul li input[type="button"]:hover {
-        background-color: #ff6363;
+    .box{
+        width: 100%;
     }
+
+    .About{
+        width: 100%;
+        margin: 0;
+        margin-top: 20px;
     }
+
+    .About h1{
+        text-align: center;
+    }
+
+    .box ul li input[type="button"] {
+        width: 100%;
+    }
+}
 </style>
-<?php
-//navbar
-include 'navANDhead.php';
-?>
+
 <body>
     <div class="container">
         <div class="box">
@@ -144,9 +154,9 @@ include 'navANDhead.php';
                 <li>22 Years</li>
                 <li>Ultra Admin</li>
                 <li>
-                    <input type="button" value="update">
-                    <input type="button" value="delete">
-                    <input type="button" value="add">
+                    <a href="Src/phpFunction/God admin functions/UsersControle.php"><input type="button" value="User Manager"></a>
+                    <a href="Src\phpFunction\UsersControle.php"><input type="button" value="manage Book Uplode"></a>
+                    <a href="Src/phpFunction/God admin functions/UsersControle.php"><input type="button" value="manage Courses upload"></a>
                 </li>
             </ul>
         </div>

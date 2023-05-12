@@ -12,13 +12,13 @@
 
 <?php
 	// check if the form has been submitted
-	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+	if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 		// retrieve the user ID from the form
 		$id = $_GET['id'];
 		
 		// connect to the database (replace with your own database credentials)
 		$host = 'localhost';
-		$username = 'username';
+		$username = 'sammy';
 		$password = 'password';
 		$dbname = 'greatmove_library';
 		
@@ -74,10 +74,10 @@
 		
 		// update the user information in the database
 		$sql = "UPDATE users SET username='$username', password='$password', email='$email', role='$role' WHERE id='$id'";
-		$result = $conn->query($sql);
+		
 		
 		// check if the update was successful
-		if ($result) {
+		if ($conn->query($sql)==TRUE) {
 			echo "User information updated successfully.";
 		}
 		else {

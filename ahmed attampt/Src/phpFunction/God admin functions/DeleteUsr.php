@@ -1,7 +1,7 @@
 <?php
 // Database configuration
 $host = "localhost";
-$username = "username";
+$username = "sammy";
 $password = "password";
 $database = "greatmove_library";
 
@@ -13,13 +13,15 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$id = $_POST["id"];
+$id = $_GET["id"];
 
 // checking if the id exists
 if ($sql = "SELECT * FROM users WHERE id='$id' " ){
 
     $sql ="DELETE FROM users WHERE id = '$id'";
-    echo "user deleted succesfully";
+    if($conn->query($sql)==TRUE){
+        echo "user deleted succesfully";
+    }
 
 }
 else{
