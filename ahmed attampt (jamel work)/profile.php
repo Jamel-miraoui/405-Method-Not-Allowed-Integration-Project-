@@ -95,39 +95,51 @@
         margin-top: 20px;
     }
 
-    @media screen and (max-width: 1068px) {
-        .container{
-            display: table;
-        }
+   /* CSS for button styles */
+.box ul li input[type="button"] {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #0d1425;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
-        .box{
-            width: 100%;
-        }
+.box ul li input[type="button"]:hover {
+    background-color: #ff6363;
+}
 
-        .About{
-            width: 100%;
-            margin: 0;
-            margin-top: 20px;
-        }
+.box ul li input[type="button"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #ff6363;
+}
 
-        .About h1{
-            text-align: center;
-        }
-            /* CSS for button styles */
-            .box ul li input[type="button"] {
-        padding: 10px 20px;
-        font-size: 18px;
-        background-color: #0d1425;
-        color: #fff;
-        border: none;
-        border-radius: 50px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
+@media screen and (max-width: 1068px) {
+    .container{
+        display: table;
     }
 
-    .box ul li input[type="button"]:hover {
-        background-color: #ff6363;
+    .box{
+        width: 100%;
     }
+
+    .About{
+        width: 100%;
+        margin: 0;
+        margin-top: 20px;
+    }
+
+    .About h1{
+        text-align: center;
+    }
+
+    .box ul li input[type="button"] {
+        width: 100%;
+    }
+}
+}
     }
 </style>
 <body>
