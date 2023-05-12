@@ -14,7 +14,7 @@
 	// check if the form has been submitted
 	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		// retrieve the user ID from the form
-		$id = $_POST['id'];
+		$id = $_GET['id'];
 		
 		// connect to the database (replace with your own database credentials)
 		$host = 'localhost';
