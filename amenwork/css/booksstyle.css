@@ -1,0 +1,22 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+th {
+    background-color:  rgba(137, 134, 134, 0.6);
+    color: white;
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+a {
+    text-decoration: none;
+    color: #0077FF;
+}
+a:hover {
+    text-decoration: underline;
+}
