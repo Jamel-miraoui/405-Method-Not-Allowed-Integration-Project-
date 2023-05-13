@@ -38,8 +38,10 @@ if (isset($_FILES['pdf_file'])&&!empty($_FILES["pdf_file"]["name"])) {
   if(in_array($fileType, $allowTypesPDF)){
 
     if($_FILES['pdf_file']['size'] < 10485760){
-      $query = "SELECT * FROM books WHERE title = '$title'";
-$stmt = $conn->prepare($query);
+
+      //testing if book name exsistes alredy 
+      $query = "SELECT * FROM books WHERE title ='$title'";
+       $stmt = $db->prepare($query);
 
 $stmt->execute();
 
@@ -67,8 +69,10 @@ if ($stmt->rowCount() == 0) {
            }
         }else{echo"<br> error cover file tipe <br>";}
       }
+   
+     
 
-     $insert = $conn->query("INSERT INTO books (title, author, description, file_path, cover_path, user_id) VALUES ('$title', '$author_name', '$category', '$targetFile', '$coverImage', 1)");
+     $insert = $db->query("INSERT INTO bookspending (title, author, description, file_path, cover_path, user_id) VALUES ('$title', '$author_name', '$category', '$targetFile', '$coverImage', 1)");
    
      if($insert){
        $statusMsg = "The file ".$fileName. " has been uploaded successfully.";
@@ -77,20 +81,24 @@ if ($stmt->rowCount() == 0) {
        $statusMsg = "<br>File upload failed, please try again.";}
        echo "<br>",$statusMsg;
       }
-      else {echo "books exicte";}
+      else {echo "books exicte";
+        header("Location: uplodebookform.php?msg=1");}
 
-    }else{echo"invalid file size";}
+    }else{echo"invalid file size";
+      header("Location: uplodebookform.php?msg=2");}
 
-  }else{echo"<br>invalid file tipe";}
+  }else{echo"<br>invalid file tipe";
+    header("Location: uplodebookform.php?msg=3");}
 }else {
   echo "<br>Error: No file uploaded.";
+  header("Location: uplodebookform.php?msg=4");
    }
   }
 
 
 
 
-$conn = null; // Close the database connection
+   $db = null; // Close the database connection
 
   
   // Close database connection

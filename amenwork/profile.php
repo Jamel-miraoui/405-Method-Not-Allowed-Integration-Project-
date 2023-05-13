@@ -155,7 +155,7 @@ include 'navANDhead.php';
                 <li>Ultra Admin</li>
                 <li>
                     <a href="Src/phpFunction/God admin functions/UsersControle.php"><input type="button" value="User Manager"></a>
-                    <a href="Src\phpFunction\UsersControle.php"><input type="button" value="manage Book Uplode"></a>
+                    <a href="Src\phpFunction\God admin functions\Pendings\ShowPending.php"><input type="button" value="manage Book Uplode"></a>
                     <a href="Src/phpFunction/God admin functions/UsersControle.php"><input type="button" value="manage Courses upload"></a>
                 </li>
             </ul>
