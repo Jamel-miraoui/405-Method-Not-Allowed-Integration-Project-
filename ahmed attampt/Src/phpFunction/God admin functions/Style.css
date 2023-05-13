@@ -47,10 +47,13 @@
   color: rgba(0, 0, 0, .3);
 }
 
+a {
+    color: #ffffff;
+}
 
 .button-19 {
     align-items: center;
-    background-color: #0A66C2;
+    background-color: #c20a0a;
     border: 0;
     border-radius: 100px;
     box-sizing: border-box;
@@ -120,4 +123,13 @@
 .styled-table tbody tr.active-row {
     font-weight: bold;
     color: #007a98;
+}
+.table{
+
+    border: 5px solid;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    padding: 10px;
+
 }

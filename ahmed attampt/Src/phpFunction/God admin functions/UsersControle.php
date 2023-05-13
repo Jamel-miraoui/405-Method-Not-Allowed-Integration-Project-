@@ -11,7 +11,7 @@
 		<input type="submit" value="Search">
 		<link rel="stylesheet" href="Style.css">
 	</form>
-
+	<div class="table">
 	<table class="styled-table">
 		<tr>
 			<th>ID</th>
@@ -69,6 +69,7 @@
 			$conn->close();
 		?>
 	</table>
+	</div>
 
 	<br>
     
