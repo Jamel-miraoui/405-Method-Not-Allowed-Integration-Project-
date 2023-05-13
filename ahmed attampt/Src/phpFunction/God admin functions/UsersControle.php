@@ -4,14 +4,14 @@
 	<title>User Management System</title>
 </head>
 <body>
-
-	<form method="post">
+<div class="table">
+	<form method="post" class="search">
 		<label for="search">Search:</label>
 		<input type="text" id="search" name="search">
 		<input type="submit" value="Search">
 		<link rel="stylesheet" href="Style.css">
 	</form>
-	<div class="table">
+	
 	<table class="styled-table">
 		<tr>
 			<th>ID</th>
