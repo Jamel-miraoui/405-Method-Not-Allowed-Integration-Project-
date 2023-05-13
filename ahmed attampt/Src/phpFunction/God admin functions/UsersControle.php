@@ -9,6 +9,7 @@
 		<label for="search">Search:</label>
 		<input type="text" id="search" name="search">
 		<input type="submit" value="Search">
+		<link rel="stylesheet" href="Style.css">
 	</form>
 
 	<table class="styled-table">
