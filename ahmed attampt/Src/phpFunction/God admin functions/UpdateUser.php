@@ -74,10 +74,10 @@
 		
 		// update the user information in the database
 		$sql = "UPDATE users SET username='$username', password='$password', email='$email', role='$role' WHERE id='$id'";
-		$result = $conn->query($sql);
+		$conn->query($sql);
 		
 		// check if the update was successful
-		if ($result) {
+		if ($conn->query($sql)) {
 			echo "User information updated successfully.";
 		}
 		else {
