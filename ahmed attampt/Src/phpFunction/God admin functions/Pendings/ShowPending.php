@@ -33,7 +33,7 @@
 				echo "<div class='book'>";
 
 				echo "<tr>";
-				echo "<td>".$row["cover"]."</td>";
+				echo "<td></td><img src=". $row['cover_path']." width='300'></td>";
 				echo "<td>".$row["title"]."</td>";
 				echo "<td>".$row["author"]."</td>";
 				echo "<td>".$row["Description"]."</td>";
