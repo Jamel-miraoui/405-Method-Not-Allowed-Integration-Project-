@@ -77,7 +77,7 @@
 		
 		
 		// check if the update was successful
-		if ($conn->query($sql)==TRUE) {
+		if ($conn->query($sql)==TRUE) {	
 			echo "User information updated successfully.";
 		}
 		else {
