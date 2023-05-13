@@ -20,7 +20,7 @@ $password = $_POST["password"];
 
 $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
 $result = mysqli_query($conn, $sql);
-$id=$result['id'];
+
 if (mysqli_num_rows($result) > 0) {
   //  $role=$result['role'];
     //User has logged in successfully
@@ -31,7 +31,7 @@ if (mysqli_num_rows($result) > 0) {
     }else{
     session_start();
     $_SESSION['login']=$username;
-    $_SESSION['id']=$id;
+    $_SESSION['id']=$result['id'];
    // $_SESSION['role']=$role;
     header("Location: ../../index.php");}
 } else {

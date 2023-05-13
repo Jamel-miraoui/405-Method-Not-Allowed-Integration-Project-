@@ -1,33 +1,41 @@
 <?php
+ini_set("display_errors",'1');
+error_reporting(E_ALL);
 // Connect to the databases
 $servername = "localhost";
-$username = "username";
+$username = "sammy";
 $password = "password";
-$dbname_pending = "books_pending";
-$dbname = "books";
-$conn_pending = new mysqli($servername, $username, $password, $dbname_pending);
+$dbname = "greatmove_library";
+
 $conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn_pending->connect_error || $conn->connect_error) {
-	die("Connection failed: " . $conn_pending->connect_error . " and " . $conn->connect_error);
+if ($conn->connect_error) {
+	die("Connection failed:" . $conn->connect_error);
 }
 // Retrieve the book information from the pending database
 $book_id = $_POST["book_id"];
-$sql = "SELECT * FROM books WHERE id=".$book_id;
-$result = $conn_pending->query($sql);
+$sql = "SELECT * FROM bookspenting WHERE id=".$book_id;
+$result = $conn->query($sql);
 if ($result->num_rows > 0) {
 	$row = $result->fetch_assoc();
+
 	$title = $row["title"];
 	$author = $row["author"];
-	$content = $row["content"];
+	$description = $row["description"];
+	$file_path = $row["file_path"];
+	$cover_path = $row["cover_path"];
+	$user_id = $row["user_id"];
+
+	
+
 	// Insert the book into the books database
-	$sql = "INSERT INTO books (title, author, content) VALUES ('$title', '$author', '$content')";
+	$sql = "INSERT INTO books (title, author, description, file_path, cover_path, user_id) VALUES ('$title', '$author', '$description', '$file_path','$cover_path','$user_id')";
 	if ($conn->query($sql) === TRUE) {
 		// Delete the book from the pending database
-		$sql = "DELETE FROM books WHERE id=".$book_id;
-		if ($conn_pending->query($sql) === TRUE) {
+		$sql = "DELETE FROM bookspenting WHERE id=".$book_id;
+		if ($conn->query($sql) === TRUE) {
 			echo "Book accepted and moved to the books database successfully";
 		} else {
-			echo "Error deleting book from pending database: " . $conn_pending->error;
+			echo "Error deleting book from pending database: " . $conn->error;
 		}
 	} else {
 		echo "Error inserting book into books database: " . $conn->error;
@@ -35,6 +43,5 @@ if ($result->num_rows > 0) {
 } else {
 	echo "Book not found in pending database";
 }
-$conn_pending->close();
 $conn->close();
 ?>

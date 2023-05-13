@@ -3,6 +3,9 @@
 require_once('sessonchek.php');
 //navbar
 include 'navANDhead.php';
+//connneton 
+require_once('connbd.php');
+$query = "SELECT * FROM ";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -153,11 +156,19 @@ include 'navANDhead.php';
                 <li>Sidkom Jamel Miraoui</li>
                 <li>22 Years</li>
                 <li>Ultra Admin</li>
+                <?php
+                if($_SESSION['login']=="admin"){
+
+               
+                ?>
                 <li>
                     <a href="Src/phpFunction/God admin functions/UsersControle.php"><input type="button" value="User Manager"></a>
-                    <a href="Src\phpFunction\UsersControle.php"><input type="button" value="manage Book Uplode"></a>
+                    <a href="Src/phpFunction/God admin functions/Pendings/ShowPending.php"><input type="button" value="manage Book Uplode"></a>
                     <a href="Src/phpFunction/God admin functions/UsersControle.php"><input type="button" value="manage Courses upload"></a>
                 </li>
+                <?php
+                 }
+                ?>
             </ul>
         </div>
         <div class="About">
