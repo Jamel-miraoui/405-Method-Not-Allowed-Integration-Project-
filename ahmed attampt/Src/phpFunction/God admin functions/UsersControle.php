@@ -23,9 +23,9 @@
 		<?php
 		// connect to the database (replace with your own database credentials)
 		$host = 'localhost';
-		$username = 'username';
+		$username = 'sammy';
 		$password = 'password';
-		$dbname = 'database';
+		$dbname = 'greatmove_library';
 
 		$conn = new mysqli($host, $username, $password, $dbname);
 
@@ -57,7 +57,7 @@
 					echo "<td>" . $row['role'] . "</td>";
 					echo "<td>";
 					echo "<a href='UpdateUser.php?id=" . $row['id'] . "'>Modify</a> ";
-					echo "<a href='DeleteUser.php?id=" . $row['id'] . "'>Delete</a>";
+					echo "<a href='DeleteUsr.php?id=" . $row['id'] . "'>Delete</a>";
 					echo "</td>";
 					echo "</tr>";
 				}

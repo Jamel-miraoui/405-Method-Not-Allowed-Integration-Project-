@@ -1,7 +1,7 @@
 <?php
 // Database configuration
 $host = "localhost";
-$username = "username";
+$username = "sammy";
 $password = "password";
 $database = "greatmove_library";
 
