@@ -23,7 +23,7 @@ $result = $conn->query($sql);
 
 if ($result && $result->num_rows > 0) {
   echo "<table>";
-  echo "<tr><th>ID</th><th>Title</th><th>Description</th><th>Author</th></tr>";
+  echo "<tr><th>ID</th><th>Title</th><th>Description</th><th>Author</th><th></th></tr>";
 
   // output data of each row
   while($row = $result->fetch_assoc()) {

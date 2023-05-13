@@ -67,8 +67,6 @@ if ($stmt->rowCount() == 0) {
            }
         }else{echo"<br> error cover file tipe <br>";}
       }
-   
-     
 
      $insert = $conn->query("INSERT INTO books (title, author, description, file_path, cover_path, user_id) VALUES ('$title', '$author_name', '$category', '$targetFile', '$coverImage', 1)");
    

@@ -13,10 +13,10 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$username = $_POST["username"];
-$password = $_POST["password"];
-$email = $_POST["email"];
-$role = $_POST["role"];
+$username = $_GET["username"];
+$password = $_GET["password"];
+$email = $_GET["email"];
+$role = $_GET["role"];
 
 
 function modify_user($username, $password, $email, $role) {

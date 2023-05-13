@@ -18,8 +18,8 @@
 		
 		// connect to the database (replace with your own database credentials)
 		$host = 'localhost';
-		$username = 'username';
-		$password = 'password';
+		$username = 'root';
+		$password = '';
 		$dbname = 'greatmove_library';
 		
 		$conn = new mysqli($host, $username, $password, $dbname);
@@ -74,10 +74,10 @@
 		
 		// update the user information in the database
 		$sql = "UPDATE users SET username='$username', password='$password', email='$email', role='$role' WHERE id='$id'";
-		$conn->query($sql);
+		
 		
 		// check if the update was successful
-		if ($conn->query($sql)) {
+		if ($conn->query($sql)==TRUE) {
 			echo "User information updated successfully.";
 		}
 		else {
