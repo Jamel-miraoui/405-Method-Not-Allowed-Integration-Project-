@@ -2,10 +2,11 @@
 <html>
 <head>
 	<title>Modify User</title>
+	<link rel="stylesheet" href="Style.css">
 </head>
 <body>
 	<h1>Modify User</h1>
-	<form method="post">
+	<form method="post" class="form-update">
 		<label for="id">User ID:</label>
 		<input type="text" id="id" name="id"><br><br>
 		<input type="submit" value="Search"><br><br>
