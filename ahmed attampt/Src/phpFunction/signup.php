@@ -47,6 +47,7 @@ echo "New user created successfully";
 }
 else {
     echo "invalide username or email";
+    header("Location: ../../login.php?msg=3");
 }
 
 

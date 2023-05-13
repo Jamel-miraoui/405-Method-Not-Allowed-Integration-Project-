@@ -1,5 +1,6 @@
 <?php
 require_once('sessonchek.php');
+include 'navANDhead.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +13,7 @@ require_once('sessonchek.php');
     <title>uplode book form</title>
 </head>
 <body>
-<header>
+<!-- <header>
     <h1> Adding Books</h1>
     <form method="get" action="search.php">
   <input type="text" name="search" placeholder="Search...">
@@ -27,7 +28,7 @@ require_once('sessonchek.php');
 				<li><a href="login.php">Login</a></li>
 			</ul>
 		</nav>
-	</header>
+	</header> -->
 
 
 <div class="formbold-main-wrapper">

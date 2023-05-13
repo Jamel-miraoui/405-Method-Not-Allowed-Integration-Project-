@@ -1,5 +1,6 @@
 <?php
 require_once('sessonchek.php');
+include 'navANDhead.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +12,7 @@ require_once('sessonchek.php');
     <link rel="stylesheet" href="css/form.css">
     <title>uplode book form</title>
 </head>
-<body>
+<!-- <body>
 <header>
     <h1> Adding Books</h1>
     <form method="get" action="search.php">
@@ -27,9 +28,7 @@ require_once('sessonchek.php');
 				<li><a href="login.php">Login</a></li>
 			</ul>
 		</nav>
-	</header>
-
-
+	</header> -->
 <div class="formbold-main-wrapper">
 
   <div class="formbold-form-wrapper">
@@ -88,11 +87,26 @@ require_once('sessonchek.php');
               </span>
             </div>
           </div>
-          I agree to the defined
-          <a href="#"> terms, conditions, and policies</a>
+          I agree to the defined <a href="#"> terms, conditions, and policies</a>
+
         </label>
       </div>
 
+      <!-- getting the errer massges -->
+      <?php
+          if($_GET['msg']==1){
+            echo"<a>Book Alredy Exictes</a>";
+          }
+          if($_GET['msg']==2){
+            echo"<p>Invalid File Size</p>";
+          }
+          if($_GET['msg']==3){
+            echo"<p>Invalid File Tipe (PDF only)</p>";
+          }
+          if($_GET['msg']==4){
+            echo"<p>Error: No file uploaded.</p>";
+          }
+          ?>
           <div>
           <input type="submit" value="Upload" class="formbold-btn">
           </div>

@@ -38,6 +38,12 @@ if (isset($_FILES['pdf_file'])&&!empty($_FILES["pdf_file"]["name"])) {
   if(in_array($fileType, $allowTypesPDF)){
 
     if($_FILES['pdf_file']['size'] < 10485760){
+      $query = "SELECT * FROM books WHERE title = '$title'";
+$stmt = $conn->prepare($query);
+
+$stmt->execute();
+
+if ($stmt->rowCount() == 0) {
 
       move_uploaded_file($_FILES['pdf_file']['tmp_name'], $targetFile);
       
@@ -63,12 +69,7 @@ if (isset($_FILES['pdf_file'])&&!empty($_FILES["pdf_file"]["name"])) {
       }
    
      
-$query = "SELECT * FROM books WHERE title = '$title'";
-$stmt = $conn->prepare($query);
 
-$stmt->execute();
-
-if ($stmt->rowCount() == 0) {
      $insert = $conn->query("INSERT INTO books (title, author, description, file_path, cover_path, user_id) VALUES ('$title', '$author_name', '$category', '$targetFile', '$coverImage', 1)");
    
      if($insert){

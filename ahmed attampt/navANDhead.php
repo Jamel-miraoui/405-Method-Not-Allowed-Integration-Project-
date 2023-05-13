@@ -24,7 +24,7 @@
                 <li><a href="books.php">Books</a></li>
                 <li><a href="Courses.php">Courses</a></li>
                 <li><a href="logout.php">Disconnect</a></li>
-                <li><a href="login.php">Login</a></li>
+                <!-- <li><a href="login.php">Login</a></li> -->
             </ul>
         </nav>
         <div class="user-info">

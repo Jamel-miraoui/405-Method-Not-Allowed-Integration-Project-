@@ -26,6 +26,16 @@
             placeholder="Password"
             required=""
           />
+          <?php
+          if ($_GET['msg']==3){
+            echo"<p>username or email alredy existes</p>";
+          }
+          ?>
+          <?php
+          if ($_GET['msg']==1){
+            echo"<p>Invalid username or password.</p>";
+          }
+          ?>
           <button value="submit">Sign up</button>
         </form>
       </div>
@@ -37,6 +47,11 @@
           <input type="text" name="username" placeholder="Email" required="" />
           <input type="password" name="password" placeholder="Password" required="" />
           <button type="submit">Login</button>
+          <?php
+          if ($_GET['msg']==1){
+            echo"<p>Invalid username or password.</p>";
+          }
+          ?>
         </form>
       </div>
 
