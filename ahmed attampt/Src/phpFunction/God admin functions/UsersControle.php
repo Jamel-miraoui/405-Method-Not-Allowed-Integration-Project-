@@ -11,7 +11,7 @@
 		<input type="submit" value="Search">
 	</form>
 
-	<table>
+	<table class="styled-table">
 		<tr>
 			<th>ID</th>
 			<th>Username</th>
@@ -56,8 +56,8 @@
 					echo "<td>" . $row['email'] . "</td>";
 					echo "<td>" . $row['role'] . "</td>";
 					echo "<td>";
-					echo "<a href='UpdateUser.php?id=" . $row['id'] . "'>Modify</a> ";
-					echo "<a href='DeleteUsr.php?id=" . $row['id'] . "'>Delete</a>";
+					echo "<button class='button-18' role='button'><a href='UpdateUser.php?id=" . $row['id'] . "'>Modify</a> </button>";
+					echo "<button class='button-19' role='button'><a href='DeleteUsr.php?id=" . $row['id'] . "'>Delete</a></button>";
 					echo "</td>";
 					echo "</tr>";
 				}
