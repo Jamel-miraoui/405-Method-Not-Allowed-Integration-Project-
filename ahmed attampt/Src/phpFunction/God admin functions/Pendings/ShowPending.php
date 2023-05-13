@@ -7,10 +7,11 @@
 	<h1>List of Pending Books</h1>
 	<table>
 		<tr>
-			<th>ID</th>
-			<th>Title</th>
-			<th>Author</th>
-			<th>Actions</th>
+			<th>Cover</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Description</th>
+			
 		</tr>
 		<?php
 		// Connect to the database
@@ -28,10 +29,15 @@
 		if ($result->num_rows > 0) {
 			// Output data of each row
 			while($row = $result->fetch_assoc()) {
+
+				echo "<div class='book'>";
+
 				echo "<tr>";
-				echo "<td>".$row["id"]."</td>";
+				echo "<td>".$row["cover"]."</td>";
 				echo "<td>".$row["title"]."</td>";
 				echo "<td>".$row["author"]."</td>";
+				echo "<td>".$row["Description"]."</td>";
+				
 				echo "<td>";
 				echo "<form method='post' action='accept_book.php'>";
 				echo "<input type='hidden' name='book_id' value='".$row["id"]."'>";
@@ -43,6 +49,8 @@
 				echo "</form>";
 				echo "</td>";
 				echo "</tr>";
+
+				echo "</div>";
 			}
 		} else {
 			echo "<tr><td colspan='4'>No pending books</td></tr>";
