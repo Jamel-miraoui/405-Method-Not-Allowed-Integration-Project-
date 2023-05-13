@@ -106,6 +106,9 @@ include 'navANDhead.php';
           if($_GET['msg']==4){
             echo"<p>Error: No file uploaded.</p>";
           }
+          if($_GET['msg']==5){
+            echo"<p>votre demande était envoyée à l'administrateur </p>";
+          }
           ?>
           <div>
           <input type="submit" value="Upload" class="formbold-btn">

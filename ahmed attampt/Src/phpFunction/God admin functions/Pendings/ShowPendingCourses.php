@@ -50,7 +50,7 @@
 			die("Connection failed: " . $conn->connect_error);
 		}
 		// Retrieve the list of pending books
-		$sql = "SELECT * FROM lessonsspenting";
+		$sql = "SELECT * FROM lessonspenting";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
 			// Output data of each row
@@ -60,9 +60,16 @@
   <div class="lessons">
     
     <!--  -->
+    
+    <h3><?php echo $row['title']; ?></h3>
+    <p><?php echo $row['class_level']; ?></p>
+    <p><?php echo $row['department_id']; ?></p>
+    <p><?php echo $row['topec']; ?></p>
    
     <a href="<?php echo $row['file_path']; ?>">PDF File</a>
 
+
+       <!-- the bottons  -->
     <form method='post' action='accept_lessons.php'>
       <input type='hidden' name='lessons_id' value='<?php echo $row["id"]; ?>'>
       <input type='submit' value='Accept' class='bbb'>

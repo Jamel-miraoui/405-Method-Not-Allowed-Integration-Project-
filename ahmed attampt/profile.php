@@ -173,8 +173,8 @@ $result = $userdata->fetch(PDO::FETCH_ASSOC);
                 ?>
                 <li>
                     <a href="Src/phpFunction/God admin functions/UsersControle.php"><input type="button" value="User Manager"></a>
-                    <a href="Src/phpFunction/God admin functions/Pendings/ShowPending.php"><input type="button" value="manage Book Uplode"></a>
-                    <a href="Src/phpFunction/God admin functions/UsersControle.php"><input type="button" value="manage Courses upload"></a>
+                    <a href="Src/phpFunction/God admin functions/Pendings/ShowPendingBooks.php"><input type="button" value="manage Book Uplode"></a>
+                    <a href="Src/phpFunction/God admin functions/Pendings/ShowPendingCourses.php"><input type="button" value="manage Courses upload"></a>
                 </li>
                 <?php
                  }
