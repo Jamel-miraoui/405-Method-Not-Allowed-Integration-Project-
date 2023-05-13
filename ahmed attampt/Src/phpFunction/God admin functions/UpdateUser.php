@@ -2,11 +2,10 @@
 <html>
 <head>
 	<title>Modify User</title>
-	<link rel="stylesheet" href="Style.css">
 </head>
 <body>
 	<h1>Modify User</h1>
-	<form method="post" class="form-update">
+	<form method="POST" action="FunctionUpdate.php">
 		<label for="id">User ID:</label>
 		<input type="text" id="id" name="id"><br><br>
 		<input type="submit" value="Search"><br><br>
@@ -19,7 +18,7 @@
 		
 		// connect to the database (replace with your own database credentials)
 		$host = 'localhost';
-		$username = 'username';
+		$username = 'sammy';
 		$password = 'password';
 		$dbname = 'greatmove_library';
 		
@@ -41,9 +40,12 @@
 			$password = $row['password'];
 			$email = $row['email'];
 			$role = $row['role'];
+			$id = $row['id'];
 ?>
 
-		<label for="username">Username:</label>
+		<label for="username">id:</label>
+		<input type="text" name="id" value="<?php echo $id; ?>"><br><br>
+		<label for="username">username:</label>
 		<input type="text" id="username" name="username" value="<?php echo $username; ?>"><br><br>
 		<label for="password">Password:</label>
 		<input type="password" id="password" name="password" value="<?php echo $password; ?>"><br><br>
@@ -51,7 +53,7 @@
 		<input type="email" id="email" name="email" value="<?php echo $email; ?>"><br><br>
 		<label for="role">Role:</label>
         <input type="role" id="role" name="role" value="<?php echo $role; ?>"><br><br>
-        <input type="hidden" name="id" value="<?php echo $user_id; ?>">
+        <!-- <input type="hidden" name="id" value="<?php echo $user_id; ?>"> -->
 		<input type="submit" name="submit" value="Save Changes">
 	</form>
 	
@@ -63,27 +65,6 @@
 		}
 	}
 	
-	// check if the form has been submitted with the updated user information
-	if (isset($_POST['submit'])) {
-
-		// retrieve the updated user information from the form
-		$username = $_POST['username'];
-		$password = $_POST['password'];
-		$email = $_POST['email'];
-		$role = $_POST['role'];
-		$id = $_POST['id'];
-		
-		// update the user information in the database
-		$sql = "UPDATE users SET username='$username', password='$password', email='$email', role='$role' WHERE id='$id'";
-		$conn->query($sql);
-		
-		// check if the update was successful
-		if ($conn->query($sql)) {
-			echo "User information updated successfully.";
-		}
-		else {
-			echo "Error";
-        }}
         ?>
         </body>
         </html>
