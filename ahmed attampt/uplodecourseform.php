@@ -30,7 +30,13 @@ include 'navANDhead.php';
 		</nav>
 	</header> -->
 
-
+  <?php
+          if($_GET['msg']==1){
+            echo"<a>votre demande était envoyée à l'administrateur </a>";
+          }
+          if($_GET['msg']==2){
+            echo"<a>verifier vote ficher </a>";
+          }?>
 <div class="formbold-main-wrapper">
 
   <div class="formbold-form-wrapper">

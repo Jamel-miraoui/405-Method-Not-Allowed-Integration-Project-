@@ -76,7 +76,8 @@ if ($stmt->rowCount() == 0) {
    
      if($insert){
        $statusMsg = "The file ".$fileName. " has been uploaded successfully.";
-       echo $statusMsg;
+       header("Location: uplodebookform.php?msg=5");
+       
       }else{
        $statusMsg = "<br>File upload failed, please try again.";}
        echo "<br>",$statusMsg;

@@ -22,18 +22,18 @@ if ($result->num_rows > 0) {
 	
 	$description = $row["description"];
 	$file_path = $row["file_path"];
-	$user_id = $row["user_id"];
+	$user_id = $row["teacher_id"];
 
 	
 
 	// Insert the lesson into the lessons database
-	$sql = "INSERT INTO lessons (title, author, description, file_path, cover_path, user_id) VALUES ('$title', '$author', '$description', '$file_path','$cover_path','$user_id')";
+	$sql = "INSERT INTO lessons (title,description, file_path, teacher_id) VALUES ('$title', '$description', '$file_path','$user_id')";
 	if ($conn->query($sql) === TRUE) {
 		// Delete the lesson from the pending database
 		$sql = "DELETE FROM lessonspenting WHERE id=".$lesson_id;
 		if ($conn->query($sql) === TRUE) {
 			echo "lesson accepted and moved to the lessons database successfully";
-			header("Location: ShowPending.php?msg=1");
+			header("Location: ShowPendingCourses.php?msg=1");
 
 		} else {
 			echo "Error deleting lesson from pending database: " . $conn->error;
