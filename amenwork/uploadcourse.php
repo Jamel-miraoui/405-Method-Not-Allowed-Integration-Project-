@@ -35,19 +35,19 @@ if (isset($_FILES['pdf_file'])) {
   $targetDir = "uploads/";
   $targetFile = $targetDir . $fileName;
   move_uploaded_file($_FILES['pdf_file']['tmp_name'], $targetFile);
- 
-  $insert = $conn->query("INSERT INTO lessons (title,description, file_path, teacher_id, created_at) VALUES ('$title', '$topec', '$targetFile',1, '$class')");
+  
+  $insert = $db->query("INSERT INTO lessons (title, description, file_path, teacher_id, department_id, topec, class_level) VALUES ('$title', '$description', '$targetFile',1, '$department','$topec', '$class')");
   if($insert){
     $statusMsg = "The file ".$fileName. " has been uploaded successfully.";
 	echo"file uploded secssefully";
 	echo $targetFile;
    }else{
     $statusMsg = "File upload failed, please try again.";}
-   
+
 } else {
   echo "Error: No file uploaded.";
-  mysqli_close($conn);
+  mysqli_close($bd);
 }
-
+mysqli_close($bd);
 }
 ?>
