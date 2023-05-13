@@ -62,7 +62,7 @@ CREATE TABLE `lessons` (
 --
 
 CREATE TABLE `lessonspenting` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   `description` text DEFAULT NULL,
   `file_path` varchar(255) NOT NULL,
@@ -80,7 +80,7 @@ CREATE TABLE `lessonspenting` (
 -- Table structure for table `bookspenting`
 --
 CREATE TABLE `bookspenting` (
-`id` int(11) NOT NULL,
+`id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   `author` varchar(255) NOT NULL,
   `description` text DEFAULT NULL,

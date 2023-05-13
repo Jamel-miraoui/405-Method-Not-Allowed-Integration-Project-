@@ -22,7 +22,6 @@ $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'"
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
-  //  $role=$result['role'];
     //User has logged in successfully
     if($username == "admin"){
         session_start();
@@ -31,11 +30,9 @@ if (mysqli_num_rows($result) > 0) {
     }else{
     session_start();
     $_SESSION['login']=$username;
-    $_SESSION['id']=$result['id'];
-   // $_SESSION['role']=$role;
     header("Location: ../../index.php");}
 } else {
     // Login failed
-    echo "Invalid username or password.";
+    // echo "Invalid username or password.";
     header("Location: ../../index.php?msg=1");
 }

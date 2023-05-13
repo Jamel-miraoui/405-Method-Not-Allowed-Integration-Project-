@@ -1,11 +1,17 @@
 <?php
+ini_set("display_errors",'1');
+error_reporting(E_ALL);
 //chek sesson
 require_once('sessonchek.php');
 //navbar
 include 'navANDhead.php';
 //connneton 
 require_once('connbd.php');
-$query = "SELECT * FROM ";
+$login = $_SESSION['login'];
+$query = "SELECT * FROM users where username ='$login'";
+$userdata= $db->prepare($query);
+$userdata->execute();
+$result = $userdata->fetch(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -153,9 +159,13 @@ $query = "SELECT * FROM ";
         <div class="box">
             <img src="Profile-Icon-SVG-09856789.png" alt="">
             <ul>
-                <li>Sidkom Jamel Miraoui</li>
-                <li>22 Years</li>
-                <li>Ultra Admin</li>
+                <li><?php
+                       echo $result['username'];
+                ?></li>
+                <li><?php
+                if($_SESSION['login']!="admin"){
+                       echo "ROLE: ".$result['role'];
+                }?></li>
                 <?php
                 if($_SESSION['login']=="admin"){
 
@@ -176,8 +186,13 @@ $query = "SELECT * FROM ";
                 <h1>about</h1>
             </ul>
             <ul>
-                <h3>role</h3>
-                <li>Actor</li>
+                <h3><?php
+                       echo $result['role'];
+                ?></h3>
+                <li><?php
+                       echo $result['username'];
+                ?></li>
+
             </ul>
         </div>
     </div>
