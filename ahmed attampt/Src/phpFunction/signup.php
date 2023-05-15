@@ -9,9 +9,9 @@ $role = $_POST["role"];
 
 $host = "localhost";
 $user = "sammy";
-$password = "password";
+$pasw = "password";
 $database = "greatmove_library";
-$conn = new mysqli($host, $user, $password, $database);
+$conn = new mysqli($host, $user, $pasw, $database);
 
 // Check for connection errors
 if ($conn->connect_error) {
