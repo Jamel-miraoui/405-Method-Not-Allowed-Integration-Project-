@@ -34,5 +34,5 @@ if (mysqli_num_rows($result) > 0) {
 } else {
     // Login failed
     // echo "Invalid username or password.";
-    header("Location: ../../index.php?msg=1");
+    header("Location: ../../login.php?msg=1");
 }

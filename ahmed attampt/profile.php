@@ -1,6 +1,6 @@
 <?php
-ini_set("display_errors",'1');
-error_reporting(E_ALL);
+// ini_set("display_errors",'1');
+// error_reporting(E_ALL);
 //chek sesson
 require_once('sessonchek.php');
 //navbar

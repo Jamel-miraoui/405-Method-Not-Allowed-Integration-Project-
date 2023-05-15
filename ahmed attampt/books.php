@@ -1,8 +1,8 @@
 <!-- //dispay all books from data base file  -->
 <?php
 // Connect to the database
-ini_set("display_errors",'1');
-error_reporting(E_ALL);
+// ini_set("display_errors",'1');
+// error_reporting(E_ALL);
 require_once('connbd.php');
 //check sesson 
 require_once('sessonchek.php');
