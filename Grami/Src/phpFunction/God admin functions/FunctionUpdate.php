@@ -3,8 +3,8 @@ ini_set("display_errors",'1');
 error_reporting(E_ALL);
 // Database configuration
 $host = "localhost";
-$username = "sammy";
-$password = "password";
+$username = "root";
+$password = "";
 $database = "greatmove_library";
 
 // Create a connection

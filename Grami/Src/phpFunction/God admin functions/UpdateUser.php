@@ -18,8 +18,8 @@
 		
 		// connect to the database (replace with your own database credentials)
 		$host = 'localhost';
-		$username = 'sammy';
-		$password = 'password';
+		$username = "root";
+		$password = "";
 		$dbname = 'greatmove_library';
 		
 		$conn = new mysqli($host, $username, $password, $dbname);

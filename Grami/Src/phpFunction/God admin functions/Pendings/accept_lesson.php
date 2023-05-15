@@ -3,8 +3,8 @@ ini_set("display_errors",'1');
 error_reporting(E_ALL);
 // Connect to the databases
 $servername = "localhost";
-$username = "sammy";
-$password = "password";
+$username = "root";
+$password = "";
 $dbname = "greatmove_library";
 
 $conn = new mysqli($servername, $username, $password, $dbname);

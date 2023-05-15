@@ -1,8 +1,8 @@
 <?php
 // Database configuration
 $host = "localhost";
-$username = "sammy";
-$password = "password";
+$username = "root";
+$password = "";
 $database = "greatmove_library";
 
 // Create a connection

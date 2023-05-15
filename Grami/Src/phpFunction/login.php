@@ -2,12 +2,12 @@
 
 // Database configuration
 $host = "localhost";
-$username = "sammy";
-$password = "password";
+$user = "root";
+$pass = "";
 $database = "greatmove_library";
 
 // Create a connection
-$conn = mysqli_connect($host, $username, $password, $database);
+$conn = mysqli_connect($host, $user, $pass, $database);
 
 // Check if the connection was successful
 if (!$conn) {
