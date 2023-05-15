@@ -13,7 +13,7 @@
 <body>
 <header>
     <div class="header-container">
-        <h1>Library</h1>
+        <h1><img src="resorses/logo.png" width="190"></h1>
         <form method="get" action="search.php" class="search-form">
             <input type="text" name="search" class="search-input" placeholder="Search...">
             <input type="submit" value="Search" class="search-submit">
