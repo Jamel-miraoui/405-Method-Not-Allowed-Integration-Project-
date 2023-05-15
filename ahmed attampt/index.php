@@ -1,6 +1,5 @@
+
 <?php
-require_once('sessonchek.php');
-//navbar
 include 'navANDhead.php';
 ?>
 		<main>
