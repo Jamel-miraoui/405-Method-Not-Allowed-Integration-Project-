@@ -16,7 +16,7 @@
           <label for="chk" aria-hidden="true">Sign up</label>
           <input type="text" name="user" placeholder="User name" required="true" />
           <input type="email" name="email" placeholder="Email" required="true" />
-          <select name="role" id="role">
+          <select name="role" id="role" class="role">
             <option value="student">student</option>
             <option value="teacher">teachers</option>
           </select>
@@ -26,16 +26,18 @@
             placeholder="Password"
             required=""
           />
+          <div class="notif">
           <?php
           if ($_GET['msg']==3){
-            echo"<p>username or email alredy existes</p>";
+            echo"<p>(!) username or email alredy existes</p>";
           }
           ?>
           <?php
           if ($_GET['msg']==1){
-            echo"<p>Invalid username or password.</p>";
+            echo"<p>(!) Invalid username or password.</p>";
           }
           ?>
+          </div>
           <button value="submit">Sign up</button>
         </form>
       </div>
@@ -47,11 +49,13 @@
           <input type="text" name="username" placeholder="Email" required="" />
           <input type="password" name="password" placeholder="Password" required="" />
           <button type="submit">Login</button>
+          <div class="notif1">
           <?php
           if ($_GET['msg']==1){
             echo"<p>Invalid username or password.</p>";
           }
           ?>
+          </div>
         </form>
       </div>
 
