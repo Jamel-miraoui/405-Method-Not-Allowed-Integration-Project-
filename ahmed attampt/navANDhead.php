@@ -1,3 +1,7 @@
+<?php
+ini_set("display_errors",'1');
+error_reporting(E_ALL);
+require_once('connbd.php');?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +33,20 @@
         </nav>
         <div class="user-info">
             <a href="profile.php"><img src="Profile-Icon-SVG-09856789.png" alt="Profile photo" class="profile-photo"></a>
-            <h3 class="user-name">John Doe</h3>
+            <h3 class="user-name">
+                 <?php 
+                 if(isset($_SESSION['login'])){
+                 $login=$_SESSION['login'];
+                    $query = "SELECT * FROM users where username='$login'";
+                    $user = $db->query($query)->fetchAll(PDO::FETCH_ASSOC);
+                    foreach ($user as $user3):
+                    echo $user3['username'];
+                    endforeach;}
+                    else{
+                        echo "Guest";
+                    }
+                ?>
+            </h3>
         </div>
     </div>
 </header>

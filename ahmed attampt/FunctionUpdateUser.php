@@ -21,8 +21,8 @@ if (!$conn) {
 if (isset($_POST['submit'])) {
 
 		// retrieve the updated user information from the form
-		$username = $_POST['username'];
-		$password = $_POST['password'];
+		$user = $_POST['username'];
+		$pass = $_POST['password'];
 		$email = $_POST['email'];
 		$role = $_POST['role'];
 		$id = $_POST['id'];
@@ -32,7 +32,7 @@ if (isset($_POST['submit'])) {
 		
 		// update the user information in the database
 		
-        $insert = $conn->query("UPDATE users SET username='$username' WHERE id='$id' ");
+        $insert = $conn->query("UPDATE users SET username='$user', password='$pass', email='$email', role='$role' WHERE id='$id' ");
         // echo "Rows affected: " . mysqli_affected_rows($conn);
 		// check if the update was successful
 		if ($insert) {
