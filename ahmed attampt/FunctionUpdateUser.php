@@ -1,4 +1,7 @@
 <?php
+include 'navANDhead.php';
+require_once('sessonchekadmin.php');
+
 ini_set("display_errors",'1');
 error_reporting(E_ALL);
 // Database configuration
@@ -23,7 +26,7 @@ if (isset($_POST['submit'])) {
 		$email = $_POST['email'];
 		$role = $_POST['role'];
 		$id = $_POST['id'];
-        echo "noramlmon el id lenna<br>",$id;
+        // echo "noramlmon el id lenna<br>",$id;
 
         
 		
@@ -33,9 +36,7 @@ if (isset($_POST['submit'])) {
         // echo "Rows affected: " . mysqli_affected_rows($conn);
 		// check if the update was successful
 		if ($insert) {
-            echo $username;
-            echo "<br>".$id;
-			echo "User information updated successfully.";
+            echo "User information updated successfully.";
 		}
 		else {
 			echo "Error";

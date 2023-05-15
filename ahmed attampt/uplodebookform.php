@@ -12,23 +12,6 @@ include 'navANDhead.php';
     <link rel="stylesheet" href="css/form.css">
     <title>uplode book form</title>
 </head>
-<!-- <body>
-<header>
-    <h1> Adding Books</h1>
-    <form method="get" action="search.php">
-  <input type="text" name="search" placeholder="Search...">
-  <input type="submit" value="Search">
-         </form>
-		<nav>
-			<ul>
-				<li><a href="index.php">Home</a></li>
-				<li><a href="books.php">Books</a></li>
-				<li><a href="Courses.php">Courses</a></li>
-				<li><a href="logout.php">Dissconnect</a></li>
-				<li><a href="login.php">Login</a></li>
-			</ul>
-		</nav>
-	</header> -->
 <div class="formbold-main-wrapper">
 
   <div class="formbold-form-wrapper">

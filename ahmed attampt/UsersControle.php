@@ -1,3 +1,8 @@
+<?php
+include 'navANDhead.php';
+require_once('sessonchekadmin.php');
+
+?>
 <!DOCTYPE html>
 <html>
 <head>

@@ -1,4 +1,7 @@
 <?php
+require_once('sessonchekadmin.php');
+
+
 // Database configuration
 $host = "localhost";
 $username = "sammy";

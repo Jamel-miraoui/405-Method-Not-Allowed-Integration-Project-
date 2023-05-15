@@ -1,3 +1,8 @@
+<?php
+include 'navANDhead.php';
+require_once('sessonchekadmin.php');
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,10 +10,7 @@
 </head>
 <body>
 	<h1>Modify User</h1>
-	<form method="POST" action="FunctionUpdate.php">
-		<label for="id">User ID:</label>
-		<input type="text" id="id" name="id"><br><br>
-		<input type="submit" value="Search"><br><br>
+	<form method="POST" action="FunctionUpdateUser.php">
 
 <?php
 	// check if the form has been submitted

@@ -1,4 +1,7 @@
 <?php
+include 'navANDhead.php';
+require_once('sessonchekadmin.php');
+
 ini_set("display_errors",'1');
 error_reporting(E_ALL);
 // Connect to the databases
