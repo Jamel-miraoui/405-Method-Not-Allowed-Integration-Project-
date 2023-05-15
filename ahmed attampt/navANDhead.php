@@ -18,12 +18,12 @@
             <input type="text" name="search" class="search-input" placeholder="Search...">
             <input type="submit" value="Search" class="search-submit">
         </form>
-        <nav>
+        <nav class="nava">
             <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="books.php">Books</a></li>
-                <li><a href="Courses.php">Courses</a></li>
-                <li><a href="logout.php">Disconnect</a></li>
+                <li class="nava"><a href="index.php">Home</a></li>
+                <li class="nava"><a href="books.php">Books</a></li>
+                <li class="nava"><a href="Courses.php">Courses</a></li>
+                <li class="nava"><a href="logout.php">Disconnect</a></li>
                 <!-- <li><a href="login.php">Login</a></li> -->
             </ul>
         </nav>

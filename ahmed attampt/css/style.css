@@ -6,11 +6,11 @@ body {
 }
 
 header {
-	background: #360033;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #0b8793, #360033);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #0b8793, #360033); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: #ffffff;  /* fallback for old browsers */
+	/* background: -webkit-linear-gradient(to right, #0b8793, #360033);  Chrome 10-25, Safari 5.1-6 */
+	/* background: linear-gradient(to right, #0b8793, #360033); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-	color: #fff;
+	color: #000000;
 	padding: 5px;
 }
 
@@ -23,7 +23,10 @@ nav ul {
 	padding: 0;
 	list-style: none;
 	display: flex;
+	text-decoration: none;
 	justify-content: space-between;
+	border: #000000;
+	border-color: #000000;
 }
 
 nav li {
@@ -31,9 +34,19 @@ nav li {
 }
 
 nav a {
-	color: #fff;
+	color: #000000;
 	text-decoration: none;
 }
+a:link { text-decoration: none; }
+
+
+a:visited { text-decoration: none; }
+
+
+a:hover { text-decoration: none; }
+
+
+a:active { text-decoration: none; }
 
 main {
 	padding: 20px;
@@ -44,18 +57,37 @@ h2 {
 	padding-bottom: 10px;
 	border-bottom: 1px solid #ccc;
 }
+h3,p{
+
+	font-family:Verdana;
+	margin: auto;
+	width: 25%;
+	padding: 10px;
+
+}
 
 .book-container {
 	display: flex;
 	flex-wrap: wrap;
 }
-
+.img{
+	border-radius: 20px;
+	width : 300px;
+	height : 400px;
+}
+.book:hover{
+	
+	box-shadow: 0px 0px 37px #3131316c;
+	
+}
 .book {
 	margin: 71px;
 	margin-top: 10px;
 	margin-bottom: 20px;
 	padding: 10px;
-	background-color: rgba(137, 134, 134, 0.6)
+	background-color: rgb(255, 255, 255);
+	border-radius: 10px;
+	box-shadow: 0px 0px 27px #999999d8;
 }
 .course {
     border: 1px solid #ccc;
@@ -66,6 +98,8 @@ h2 {
 a {
     display: block;
     margin-top: 10px;
+	text-decoration: none;
+
 	
 }
 .button {
@@ -91,6 +125,7 @@ a {
 	border-radius:43%;
 	content: "\002B";
 	font-size: 25.5px;
+	text-decoration: none;
   }
 
   .profile-photo {
@@ -118,8 +153,10 @@ a {
 }
 
 .user-name {
+
 	margin: 0;
-	margin-left: 10px; /* Adjust the value to increase or decrease the space */
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	/* margin-left: 15px; Adjust the value to increase or decrease the space */
 }
 
 .search-form {
@@ -134,7 +171,7 @@ padding: 8px 10px; /* Adjust the padding as needed */
 font-size: 16px;
 border: 1px solid #ccc;
 border-radius: 4px;
-height: 20px; /* Adjust the height to match the search-submit button */
+height: 18px; /* Adjust the height to match the search-submit button */
 width: 400px;
 }
 
