@@ -212,6 +212,7 @@ error_reporting(E_ALL);
                         <a href="ShowPendingCourses.php"><input type="button" value="manage Courses Panding"></a>
                         <a href="ShowUplodedBooks.php"><input type="button" value="manage Uploded Books"></a>
                         <a href="ShowUplodedCourses.php"><input type="button" value="manage Uploded Courses"></a>
+                        <a href="showtmailslogin.php"><input type="button" value="manage acsses emails"></a>
 
                         <!-- <a href="ShowUplodedCourses.php"><input type="button" value="manage Courses upload"></a> -->
                     </li>
