@@ -29,6 +29,16 @@ $bookData = $db->prepare($queryBooks);
 $bookData->execute();
 $books = $bookData->fetchAll(PDO::FETCH_ASSOC);
 
+$queryCoursesp = "SELECT * FROM lessonspenting WHERE teacher_id='$id'";
+$courseDatap = $db->prepare($queryCoursesp);
+$courseDatap->execute();
+$coursesp = $courseDatap->fetchAll(PDO::FETCH_ASSOC);
+
+$queryBooksp = "SELECT * FROM bookspenting WHERE user_id='$id'";
+$bookDatap = $db->prepare($queryBooksp);
+$bookDatap->execute();
+$booksp = $bookDatap->fetchAll(PDO::FETCH_ASSOC);
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -177,7 +187,7 @@ error_reporting(E_ALL);
             width: 100%;
         }
 
-        
+
     }
 </style>
 
@@ -213,61 +223,117 @@ error_reporting(E_ALL);
         <div class="About">
             <h1>DNS Traffic DNS</h1>
             <div>
-  <div id="courses">
-    <h2>Courses:</h2>
-    <table>
-      <thead>
-        <tr>
-          
-          <th>Title</th>
-          <th>Description</th>
-          <th>Created At</th>
-          <th>Department ID</th>
-          <th>Topic</th>
-        </tr>
-      </thead>
-      <tbody>
-        <?php foreach ($courses as $course) : ?>
-          <tr>
-            
-            <td><?php echo $course['title']; ?></td>
-            <td><?php echo $course['description']; ?></td>
-            <td><?php echo $course['created_at']; ?></td>
-            <td><?php echo $course['department_id']; ?></td>
-            <td><?php echo $course['topec']; ?></td>
-          </tr>
-        <?php endforeach; ?>
-      </tbody>
-    </table>
-  </div>
-  <br><br><br>
-  <div id="books">
-    <h2>Books:</h2>
-    <table>
-      <thead>
-        <tr>
-          
-          <th>Title</th>
-          <th>Author</th>
-          <th>Description</th>
-          <th>Created At</th>
-        </tr>
-      </thead>
-      <tbody>
-        <?php foreach ($books as $book) : ?>
-          <tr>
-        
-            <td><?php echo $book['title']; ?></td>
-            <td><?php echo $book['author']; ?></td>
-            <td><?php echo $book['description']; ?></td>
-            <td><?php echo $book['created_at']; ?></td>
-          </tr>
-        <?php endforeach; ?>
-      </tbody>
-    </table>
-  </div>
-</div>
+                <div id="courses">
+                    <h2>Courses:</h2>
+                    <table>
+                        <thead>
+                            <tr>
 
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th>Created At</th>
+                                <th>Department ID</th>
+                                <th>Topic</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($courses as $course) : ?>
+                                <tr>
+
+                                    <td><?php echo $course['title']; ?></td>
+                                    <td><?php echo $course['description']; ?></td>
+                                    <td><?php echo $course['created_at']; ?></td>
+                                    <td><?php echo $course['department_id']; ?></td>
+                                    <td><?php echo $course['topec']; ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+                <br><br><br>
+                <div id="books">
+                    <h2>Books:</h2>
+                    <table>
+                        <thead>
+                            <tr>
+
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Description</th>
+                                <th>Created At</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($books as $book) : ?>
+                                <tr>
+
+                                    <td><?php echo $book['title']; ?></td>
+                                    <td><?php echo $book['author']; ?></td>
+                                    <td><?php echo $book['description']; ?></td>
+                                    <td><?php echo $book['created_at']; ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <br><br><br><br>
+            <h1>Files Pendding</h1>
+            <div>
+                <div id="courses">
+                    <h2>Courses:</h2>
+                    <table>
+                        <thead>
+                            <tr>
+
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th>Created At</th>
+                                <th>Department ID</th>
+                                <th>Topic</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($coursesp as $course) : ?>
+                                <tr>
+
+                                    <td><?php echo $course['title']; ?></td>
+                                    <td><?php echo $course['description']; ?></td>
+                                    <td><?php echo $course['created_at']; ?></td>
+                                    <td><?php echo $course['department_id']; ?></td>
+                                    <td><?php echo $course['topec']; ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+                <br><br><br>
+                <div id="books">
+                    <h2>Books:</h2>
+                    <table>
+                        <thead>
+                            <tr>
+
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Description</th>
+                                <th>Created At</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($booksp as $book) : ?>
+                                <tr>
+
+                                    <td><?php echo $book['title']; ?></td>
+                                    <td><?php echo $book['author']; ?></td>
+                                    <td><?php echo $book['description']; ?></td>
+                                    <td><?php echo $book['created_at']; ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 </body>

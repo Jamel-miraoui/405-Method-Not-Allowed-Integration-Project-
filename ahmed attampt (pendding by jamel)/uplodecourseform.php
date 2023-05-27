@@ -12,36 +12,65 @@ include 'navANDhead.php';
     <link rel="stylesheet" href="css/form.css">
     <title>uplode book form</title>
 </head>
+<body>
+
+  <?php
+          if($_GET['msg']==1){
+            echo"<a>votre demande était envoyée à l'administrateur </a>";
+          }
+          if($_GET['msg']==2){
+            echo"<a>verifier vote ficher </a>";
+          }?>
 <div class="formbold-main-wrapper">
 
   <div class="formbold-form-wrapper">
-     <img width="500" src="resorses/frorm2.svg" >
+     <img width="500" src="resorses/from2.jpg" >
 
-        <form action="uploadbook.php" method="POST" enctype="multipart/form-data">
-        <label for="title" class="formbold-form-label">Upload a Book:</label>
+        <form action="uploadcourse.php" method="POST" enctype="multipart/form-data">
+        <label for="title" class="formbold-form-label">Upload a course:</label>
+
          <div>
-          <label for="title" class="formbold-form-input">Book Title:</label>
+          <label for="title" class="formbold-form-input">Course Title:</label>
           <input type="text" name="title" id="title" class="formbold-form-input"><br>
           </div>
 
           <div>
-          <label for="author_name">Author Name:</label>
-          <input type="text" name="author_name" id="author_name" class="formbold-form-input"><br>
+          <label for="author_name">Topec:</label>
+          <input type="text" name="topec" id="topec" class="formbold-form-input"><br>
+          </div>
+
+          <div>
+          <label for="category">Department:</label>
+          <select id="department" name="department" class="formbold-form-input">
+               <option value="IT">IT</option>
+               <option value="GE">GE</option>
+               <option value="GM">GM</option>
+               <option value="Gestion">Gestion</option>
+             </select>
+          
+          </div>
+
+          <div>
+          <label for="category">class:</label>
+          <select id="class" name="class" class="formbold-form-input">
+               <option value="1">1er</option>
+               <option value="2">2eme</option>
+               <option value="3">3eme</option>
+               <option value="11">1er master</option>
+               <option value="22">2eme master</option>
+             </select>
+          
           </div>
 
           <div>
           <label for="category">Description:</label>
-          <input type="text" name="category" id="category" class="formbold-form-input"><br>
+          <input type="select" name="description" id="description" class="formbold-form-input"><br>
           </div>
+
 
           <div>
           <label for="pdf_file">PDF File:</label>
           <input type="file" name="pdf_file"id="pdf_file" class="formbold-form-input formbold-form-file"><br>
-          </div>
-
-          <div>
-          <label for="cover_image">Cover Image:</label>
-          <input type="file" name="cover_image" id="cover_image" class="formbold-form-input formbold-form-file"><br>
           </div>
 
           <div class="formbold-checkbox-wrapper">
@@ -70,29 +99,11 @@ include 'navANDhead.php';
               </span>
             </div>
           </div>
-          I agree to the defined <a href="#"> terms, conditions, and policies</a>
-
+          I agree to the defined
+          <a href="#"> terms, conditions, and policies</a>
         </label>
       </div>
 
-      <!-- getting the errer massges -->
-      <?php
-          if($_GET['msg']==1){
-            echo"<a>Book Alredy Exictes</a>";
-          }
-          if($_GET['msg']==2){
-            echo"<p>Invalid File Size</p>";
-          }
-          if($_GET['msg']==3){
-            echo"<p>Invalid File Tipe (PDF only)</p>";
-          }
-          if($_GET['msg']==4){
-            echo"<p>Error: No file uploaded.</p>";
-          }
-          if($_GET['msg']==5){
-            echo"<p>votre demande était envoyée à l'administrateur </p>";
-          }
-          ?>
           <div>
           <input type="submit" value="Upload" class="formbold-btn">
           </div>
