@@ -144,6 +144,19 @@ UNLOCK TABLES;
 -- Table structure for table `student_progress`
 --
 
+CREATE TABLE studentsemails (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) NOT NULL,
+    valid ENUM('used', 'notused') NOT NULL
+);
+
+CREATE TABLE teacheremails (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) NOT NULL,
+    valid ENUM('used', 'notused') NOT NULL
+);
+
+
 DROP TABLE IF EXISTS `student_progress`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;

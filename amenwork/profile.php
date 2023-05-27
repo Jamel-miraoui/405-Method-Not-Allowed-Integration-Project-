@@ -1,8 +1,17 @@
 <?php
+// ini_set("display_errors",'1');
+// error_reporting(E_ALL);
 //chek sesson
 require_once('sessonchek.php');
 //navbar
 include 'navANDhead.php';
+//connneton 
+require_once('connbd.php');
+$login = $_SESSION['login'];
+$query = "SELECT * FROM users where username ='$login'";
+$userdata= $db->prepare($query);
+$userdata->execute();
+$result = $userdata->fetch(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -150,14 +159,31 @@ include 'navANDhead.php';
         <div class="box">
             <img src="Profile-Icon-SVG-09856789.png" alt="">
             <ul>
-                <li>Sidkom Jamel Miraoui</li>
-                <li>22 Years</li>
-                <li>Ultra Admin</li>
+                <li><?php
+                       echo $result['username'];
+                ?></li>
+                <li><?php
+                if($_SESSION['login']!="admin"){
+                       echo "ROLE: ".$result['role'];
+                }?></li>
+                <?php
+                if($_SESSION['login']=="admin"){
+
+               
+                ?>
                 <li>
-                    <a href="Src/phpFunction/God admin functions/UsersControle.php"><input type="button" value="User Manager"></a>
-                    <a href="Src\phpFunction\God admin functions\Pendings\ShowPending.php"><input type="button" value="manage Book Uplode"></a>
-                    <a href="Src/phpFunction/God admin functions/UsersControle.php"><input type="button" value="manage Courses upload"></a>
+                    <a href="UsersControle.php"><input type="button" value="User Manager"></a>
+                    <a href="ShowPendingBooks.php"><input type="button" value="Manage Book's Panding"></a>
+                    <a href="ShowPendingCourses.php"><input type="button" value="manage Courses Panding"></a>
+                    <a href="ShowUplodedBooks.php"><input type="button" value="manage Uploded Books"></a>
+                    <a href="ShowUplodedCourses.php"><input type="button" value="manage Uploded Courses"></a>
+                    <a href="ShowEmail.php"><input type="button" value="manage emil"></a>
+
+                    <!-- <a href="ShowUplodedCourses.php"><input type="button" value="manage Courses upload"></a> -->
                 </li>
+                <?php
+                 }
+                ?>
             </ul>
         </div>
         <div class="About">
@@ -165,8 +191,13 @@ include 'navANDhead.php';
                 <h1>about</h1>
             </ul>
             <ul>
-                <h3>role</h3>
-                <li>Actor</li>
+                <h3><?php
+                       echo $result['role'];
+                ?></h3>
+                <li><?php
+                       echo $result['username'];
+                ?></li>
+
             </ul>
         </div>
     </div>
