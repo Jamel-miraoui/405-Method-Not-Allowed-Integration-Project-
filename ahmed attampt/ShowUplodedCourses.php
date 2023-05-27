@@ -39,8 +39,6 @@ require_once('sessonchekadmin.php');
 
 
        <!-- the bottons  -->
-
-      <input type='hidden' name='lessons_id' value='<?php echo $row["id"]; ?>'>
       
     </form>
     <form method='post' action='delete_lessons_uplode.php'>
