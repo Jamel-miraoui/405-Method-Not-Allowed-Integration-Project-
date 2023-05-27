@@ -146,14 +146,12 @@ UNLOCK TABLES;
 
 CREATE TABLE studentsemails (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    email VARCHAR(255) NOT NULL,
-    valid ENUM('used', 'notused') NOT NULL
+    email VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE teacheremails (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    email VARCHAR(255) NOT NULL,
-    valid ENUM('used', 'notused') NOT NULL
+    email VARCHAR(255) NOT NULL
 );
 
 
