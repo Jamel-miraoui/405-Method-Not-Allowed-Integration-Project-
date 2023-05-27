@@ -32,10 +32,11 @@ $books = $db->query($query)->fetchAll(PDO::FETCH_ASSOC);
         <?php foreach ($books as $book): ?>
 
                 <div class="book">
-					<img src="<?php echo $book['cover_path']; ?>" alt="Book 3" width="300">
+                <a href="<?php echo $book['file_path']; ?>"><img src="<?php echo $book['cover_path']; ?>" alt="Book 3" width="300"></a>
 					<h3><?php echo $book['title']; ?></h3>
 					<p><?php echo $book['author']; ?></p>
-                    <a href="<?php echo $book['file_path']; ?>">PDF File</a>
+                    
+                    
 				</div>
         <?php endforeach; ?>
     </table>
