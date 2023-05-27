@@ -9,9 +9,9 @@ $role = $_POST["role"];
 
 $host = "localhost";
 $user = "root";
-$password = "";
+$pasw = "";
 $database = "greatmove_library";
-$conn = new mysqli($host, $user, $password, $database);
+$conn = new mysqli($host, $user, $pasw, $database);
 
 // Check for connection errors
 if ($conn->connect_error) {
@@ -47,6 +47,7 @@ echo "New user created successfully";
 }
 else {
     echo "invalide username or email";
+    header("Location: ../../login.php?msg=3");
 }
 
 

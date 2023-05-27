@@ -1,5 +1,6 @@
 <?php
 require_once('sessonchek.php');
+include 'navANDhead.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,24 +13,14 @@ require_once('sessonchek.php');
     <title>uplode book form</title>
 </head>
 <body>
-<header>
-    <h1> Adding Books</h1>
-    <form method="get" action="search.php">
-  <input type="text" name="search" placeholder="Search...">
-  <input type="submit" value="Search">
-         </form>
-		<nav>
-			<ul>
-				<li><a href="index.php">Home</a></li>
-				<li><a href="books.php">Books</a></li>
-				<li><a href="Courses.php">Courses</a></li>
-				<li><a href="logout.php">Dissconnect</a></li>
-				<li><a href="login.php">Login</a></li>
-			</ul>
-		</nav>
-	</header>
 
-
+  <?php
+          if($_GET['msg']==1){
+            echo"<a>votre demande était envoyée à l'administrateur </a>";
+          }
+          if($_GET['msg']==2){
+            echo"<a>verifier vote ficher </a>";
+          }?>
 <div class="formbold-main-wrapper">
 
   <div class="formbold-form-wrapper">

@@ -1,6 +1,6 @@
 <?php
-ini_set("display_errors",'1');
-error_reporting(E_ALL);
+// ini_set("display_errors",'1');
+// error_reporting(E_ALL);
 
 // Check if form was submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -72,11 +72,12 @@ if ($stmt->rowCount() == 0) {
    
      
 
-     $insert = $db->query("INSERT INTO bookspending (title, author, description, file_path, cover_path, user_id) VALUES ('$title', '$author_name', '$category', '$targetFile', '$coverImage', 1)");
+     $insert = $db->query("INSERT INTO bookspenting (title, author, description, file_path, cover_path, user_id) VALUES ('$title', '$author_name', '$category', '$targetFile', '$coverImage', 1)");
    
      if($insert){
        $statusMsg = "The file ".$fileName. " has been uploaded successfully.";
-       echo $statusMsg;
+       header("Location: uplodebookform.php?msg=5");
+       
       }else{
        $statusMsg = "<br>File upload failed, please try again.";}
        echo "<br>",$statusMsg;
