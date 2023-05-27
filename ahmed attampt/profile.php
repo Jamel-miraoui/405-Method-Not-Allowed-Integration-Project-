@@ -203,6 +203,9 @@ error_reporting(E_ALL);
                     if ($_SESSION['login'] != "admin") {
                         echo "ROLE: " . $result['role'];
                     } ?></li>
+                    <li>
+                    <a href="logout.php"><input type="button" value="Deconnection"></a>
+                    </li>
                 <?php
                 if ($_SESSION['login'] == "admin") {
                 ?>
@@ -219,6 +222,7 @@ error_reporting(E_ALL);
                 <?php
                 }
                 ?>
+
             </ul>
         </div>
         <div class="About">

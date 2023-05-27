@@ -47,11 +47,7 @@ include 'navANDhead.php';
           <div class="formbold-checkbox-wrapper">
         <label for="supportCheckbox" class="formbold-checkbox-label">
           <div class="formbold-relative">
-            <input
-              type="checkbox"
-              id="supportCheckbox"
-              class="formbold-input-checkbox"
-            />
+
             <div class="formbold-checkbox-inner">
               <span class="formbold-opacity-0">
                 <svg
@@ -70,13 +66,7 @@ include 'navANDhead.php';
               </span>
             </div>
           </div>
-          I agree to the defined <a href="#"> terms, conditions, and policies</a>
-
-        </label>
-      </div>
-
-      <!-- getting the errer massges -->
-      <?php
+          <?php
           if($_GET['msg']==1){
             echo"<a>Book Alredy Exictes</a>";
           }
@@ -93,6 +83,9 @@ include 'navANDhead.php';
             echo"<p>votre demande était envoyée à l'administrateur </p>";
           }
           ?>
+        </label>
+      </div>
+
           <div>
           <input type="submit" value="Upload" class="formbold-btn">
           </div>

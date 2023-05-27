@@ -18,13 +18,7 @@ $books = $db->query($query)->fetchAll(PDO::FETCH_ASSOC);
     </div>
     
     <table>
-        <tr>
-            <th>Cover</th>
-            <th>Title</th>
-            <th>Author</th>
-            <th>Description</th>
-			<th>Read Now</th>
-        </tr>
+
         <section>
         <main>
         <div class="book-container">
