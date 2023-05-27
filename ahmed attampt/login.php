@@ -10,7 +10,6 @@
   <body>
     <div class="main">
       <input type="checkbox" id="chk" aria-hidden="true" />
-
       <div class="signup">
         <form method="post" action="Src/phpFunction/signup.php">
           <label for="chk" aria-hidden="true">Sign up</label>
@@ -31,6 +30,9 @@
           if ($_GET['msg']==3){
             echo"<p>(!) username or email alredy existes</p>";
           }
+          if ($_GET['msg']==4){
+            echo"<p>(!) email not valid</p>";
+          }
           ?>
           <?php
           if ($_GET['msg']==1){
@@ -46,7 +48,7 @@
       <div class="login" >
         <form method="post" action="/Src/phpFunction/login.php">
           <label for="chk" aria-hidden="true">Login</label>
-          <input type="text" name="username" placeholder="Username" required="" />
+          <input type="text" name="username" placeholder="Email" required="" />
           <input type="password" name="password" placeholder="Password" required="" />
           <button type="submit">Login</button>
           <div class="notif1">
