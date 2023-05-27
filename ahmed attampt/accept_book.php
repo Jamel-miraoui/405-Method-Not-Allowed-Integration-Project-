@@ -18,8 +18,8 @@ $book_id = $_POST["book_id"];
 $sql = "SELECT * FROM bookspenting WHERE id=".$book_id;
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
+	
 	$row = $result->fetch_assoc();
-
 	$title = $row["title"];
 	$author = $row["author"];
 	$description = $row["description"];
