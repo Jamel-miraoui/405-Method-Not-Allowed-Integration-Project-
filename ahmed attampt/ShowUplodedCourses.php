@@ -19,7 +19,7 @@ require_once('sessonchekadmin.php');
 			die("Connection failed: " . $conn->connect_error);
 		}
 		// Retrieve the list of pending books
-		$sql = "SELECT * FROM lessonspenting";
+		$sql = "SELECT * FROM lessons";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
 			// Output data of each row
@@ -39,11 +39,11 @@ require_once('sessonchekadmin.php');
 
 
        <!-- the bottons  -->
-    <form method='post' action='accept_lessons.php'>
+
       <input type='hidden' name='lessons_id' value='<?php echo $row["id"]; ?>'>
-      <input type='submit' value='Accept' class='bbb'>
+      
     </form>
-    <form method='post' action='delete_lessons_pending.php'>
+    <form method='post' action='delete_lessons_uplode.php'>
       <input  name='lessons_id' value='<?php echo $row["id"]; ?>'>
       <input type='submit' value='Delete' class='aaa'>
     </form>

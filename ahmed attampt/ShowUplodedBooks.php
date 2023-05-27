@@ -2,7 +2,7 @@
 include 'navANDhead.php';
 require_once('sessonchekadmin.php');
 ?>
-	<h1>List of Pending Courses</h1>
+	<h1>List of Pending Books</h1>
 	<table>
 		
 		<?php
@@ -19,32 +19,24 @@ require_once('sessonchekadmin.php');
 			die("Connection failed: " . $conn->connect_error);
 		}
 		// Retrieve the list of pending books
-		$sql = "SELECT * FROM lessonspenting";
+		$sql = "SELECT * FROM books";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
 			// Output data of each row
 			while($row = $result->fetch_assoc()) {
 				?>
-				     <div class="lessons-container">
-  <div class="lessons">
-    
-    <!--  -->
-    
+				     <div class="book-container">
+  <div class="book">
+    <img src="<?php echo $row['cover_path']; ?>" alt="Book 3">
     <h3><?php echo $row['title']; ?></h3>
-    <p><?php echo $row['class_level']; ?></p>
-    <p><?php echo $row['department_id']; ?></p>
-    <p><?php echo $row['topec']; ?></p>
-   
+    <p><?php echo $row['author']; ?></p>
     <a href="<?php echo $row['file_path']; ?>">PDF File</a>
-
-
-       <!-- the bottons  -->
-    <form method='post' action='accept_lessons.php'>
-      <input type='hidden' name='lessons_id' value='<?php echo $row["id"]; ?>'>
-      <input type='submit' value='Accept' class='bbb'>
+    <form method='post' action=''>
+      <input name='book_id' value='<?php echo $row["id"]; ?>'>
+     
     </form>
-    <form method='post' action='delete_lessons_pending.php'>
-      <input  name='lessons_id' value='<?php echo $row["id"]; ?>'>
+    <form method='post' action='delete_book_Uplode.php'>
+      <input name='book_id' value='<?php echo $row["id"]; ?>'>
       <input type='submit' value='Delete' class='aaa'>
     </form>
   </div>
@@ -56,7 +48,7 @@ require_once('sessonchekadmin.php');
 </body>
 </html>
 <style>
-.lessons-container {
+.book-container {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -65,33 +57,33 @@ require_once('sessonchekadmin.php');
   
 }
 
-.lessons {
-  width: 300px;
+.book {
+  /* width: 300px; */
   padding: 20px;
   text-align: center;
   background-color: #f2f2f2;
   border-radius: 8px;
 }
 
-.lessons img {
-  width: 400%;
+.book img {
+  /* width: 400%; */
   max-height: 400px;
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 10px;
 }
 
-.lessons h3 {
+.book h3 {
   font-size: 20px;
   margin-bottom: 8px;
 }
 
-.lessons p {
+.book p {
   font-size: 16px;
   margin-bottom: 16px;
 }
 
-.lessons a {
+.book a {
   display: inline-block;
   padding: 8px 16px;
   background-color: #007bff;
@@ -101,16 +93,16 @@ require_once('sessonchekadmin.php');
   transition: background-color 0.3s ease;
 }
 
-.lessons a:hover {
+.book a:hover {
   background-color: #0056b3;
 }
 
-.lessons form {
+.book form {
   margin-top: 16px;
   display: inline-block;
 }
 
-.lessons form input[type="submit"][value="Accept"] {
+.book form input[type="submit"][value="Accept"] {
   background-color: green;
   color: #fff;
 }

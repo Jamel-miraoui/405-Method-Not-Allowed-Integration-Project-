@@ -23,11 +23,11 @@ $result = $conn->query($sql);
 
 if ($result && $result->num_rows > 0) {
   echo "<table>";
-  echo "<tr><th>ID</th><th>Title</th><th>Description</th><th>Author</th><th></th></tr>";
+  echo "<tr><th>ID</th><th>Title</th><th>Description</th><th>Author</th><th>see file</th></tr>";
 
   // output data of each row
   while($row = $result->fetch_assoc()) {
-    echo "<tr><td>" . $row["id"]. "</td><td>" . $row["title"]. "</td><td>" . $row["description"]. "</td><td>" . $row["author"]. "</td></tr>";
+    echo "<tr><td>" . $row["id"]. "</td><td>" . $row["title"]. "</td><td>" . $row["description"]. "</td><td>" . $row["author"]. "</td><td><a href=" . $row["file_path"]. ">pdf file</a></td></tr>";
   }
   echo "</table>";
 }
@@ -38,11 +38,11 @@ else {
 
    if ($result2 && $result2->num_rows > 0) {
     echo "<table>";
-  echo "<tr><th>ID</th><th>Title</th><th>Description</th><th>Department</th><th>Topec</th></tr>";
+  echo "<tr><th>ID</th><th>Title</th><th>Description</th><th>Department</th><th>Topec</th><th>file</th></tr>";
 
   // output data of each row
   while($row = $result2->fetch_assoc()) {
-    echo "<tr><td>" . $row["id"]. "</td><td>" . $row["title"]. "</td><td>" . $row["description"]. "</td><td>" . $row["department_id"]. "</td><td>".$row["topec"]."</td></tr>";
+    echo "<tr><td>" . $row["id"]. "</td><td>" . $row["title"]. "</td><td>" . $row["description"]. "</td><td>" . $row["department_id"]. "</td><td>".$row["topec"]."</td><td><a href=".$row["file_path"].">pdf file</a></td></tr>";
   }
 
 

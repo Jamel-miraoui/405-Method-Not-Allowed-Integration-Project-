@@ -16,7 +16,7 @@ $book_id = $_POST["book_id"];
 $sql = "DELETE FROM bookspenting WHERE id=".$book_id;
 if ($conn->query($sql) === TRUE) {
 	echo "Book deleted successfully";
-	header("Location: ShowPendingBooks.php?msg=1");
+	header("Location: ShowPendingBooks.php");
 } else {
 	echo "Error deleting book: " . $conn->error;
 }

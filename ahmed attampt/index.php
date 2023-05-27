@@ -26,17 +26,6 @@ include 'navANDhead.php';
 					<h3>Book 3 Title</h3>
 					<p>Author Name</p>
 				</div>
-				<div class="book">
-					<img src="resorses/p1.jpeg" alt="Book 3" width="300" class="img">
-					<h3>Book 3 Title</h3>
-					<p>Author Name</p>
-				</div>
-				<div class="book">
-					<img src="resorses/p1.jpeg" alt="Book 3" width="300" class="img">
-					<h3>Book 3 Title</h3>
-					<p>Author Name</p>
-				</div>
-			  
 				
 			</div>
 		</section>
