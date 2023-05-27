@@ -5,9 +5,9 @@ body{
 	justify-content: center;
 	align-items: center;
 	min-height: 100vh;
-	background: #360033;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #0b8793, #360033);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #0b8793, #360033); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background-image: url("../Background.jpg");  /* fallback for old browsers */
+	/* background: -webkit-linear-gradient(to right, #0b8793, #360033);
+	background: linear-gradient(to right, #0b8793, #360033);  */
 
 }
 .main{
@@ -17,7 +17,7 @@ body{
 	overflow: hidden;
 	background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;
 	border-radius: 10px;
-	box-shadow: 5px 20px 50px #000;
+	box-shadow: 0px 0px 90px #000;
 }
 #chk{
 	display: none;
