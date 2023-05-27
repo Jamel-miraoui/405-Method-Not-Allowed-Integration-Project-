@@ -15,7 +15,7 @@ include 'navANDhead.php';
 <div class="formbold-main-wrapper">
 
   <div class="formbold-form-wrapper">
-     <img width="500" src="resorses/form.svg" >
+     <img width="500" src="resorses/frorm2.svg" >
 
         <form action="uploadbook.php" method="POST" enctype="multipart/form-data">
         <label for="title" class="formbold-form-label">Upload a Book:</label>

@@ -34,7 +34,7 @@ if ($sql = "SELECT * FROM users WHERE id='$id' " ){
     $conn->query($sql5)==TRUE;
     if($conn->query($sql3)==TRUE){
         echo "user deleted succesfully";
-    }
+    } 
 
 }
 else{
