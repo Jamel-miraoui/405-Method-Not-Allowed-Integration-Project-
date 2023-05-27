@@ -8,8 +8,8 @@ $email = $_POST["email"];
 $role = $_POST["role"];
 
 $host = "localhost";
-$user = "root";
-$pasw = "";
+$user = "sammy";
+$pasw = "password";
 $database = "greatmove_library";
 $conn = new mysqli($host, $user, $pasw, $database);
 

@@ -5,8 +5,8 @@ require_once('sessonchekadmin.php');
 // error_reporting(E_ALL);
 // Connect to the databases
 $servername = "localhost";
-$username = "sammy";
-$password = "password";
+$username = "root";
+$password = "";
 $dbname = "greatmove_library";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -18,8 +18,8 @@ $book_id = $_POST["book_id"];
 $sql = "SELECT * FROM bookspenting WHERE id=".$book_id;
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
+	
 	$row = $result->fetch_assoc();
-
 	$title = $row["title"];
 	$author = $row["author"];
 	$description = $row["description"];

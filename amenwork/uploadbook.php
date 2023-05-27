@@ -6,7 +6,15 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   
   // Connect to database
+  require_once('sessonchek.php'); 
   include 'connbd.php';
+  //selecting the id of the user 
+  $login = $_SESSION['login'];
+$query = "SELECT * FROM users where username ='$login'";
+$userdata= $db->prepare($query);
+$userdata->execute();
+$result = $userdata->fetch(PDO::FETCH_ASSOC);
+$userID = $result['id'];
 
   $allowTypesPDF = array('pdf'); 
   $allowTypes = array('jpg','png','jpeg','gif');
@@ -72,7 +80,7 @@ if ($stmt->rowCount() == 0) {
    
      
 
-     $insert = $db->query("INSERT INTO bookspenting (title, author, description, file_path, cover_path, user_id) VALUES ('$title', '$author_name', '$category', '$targetFile', '$coverImage', 1)");
+     $insert = $db->query("INSERT INTO bookspenting (title, author, description, file_path, cover_path, user_id) VALUES ('$title', '$author_name', '$category', '$targetFile', '$coverImage', '$userID')");
    
      if($insert){
        $statusMsg = "The file ".$fileName. " has been uploaded successfully.";

@@ -64,21 +64,4 @@ include 'navANDhead.php';
     </table>
 
 </body>
-
-    <style>
-    /* Style pour les éléments <td> */
-    td {
-        padding: 10px;
-        text-align: center;
-        border: 1px solid #ccc;
-    }
-
-    /* Style spécifique pour le lien PDF */
-    td a {
-        color: #0066cc;
-        text-decoration: none;
-    }
-</style>
-
-    
 </html>
