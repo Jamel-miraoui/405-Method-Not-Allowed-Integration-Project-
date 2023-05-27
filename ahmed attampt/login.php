@@ -46,7 +46,7 @@
       <div class="login" >
         <form method="post" action="/Src/phpFunction/login.php">
           <label for="chk" aria-hidden="true">Login</label>
-          <input type="text" name="username" placeholder="Email" required="" />
+          <input type="text" name="username" placeholder="Username" required="" />
           <input type="password" name="password" placeholder="Password" required="" />
           <button type="submit">Login</button>
           <div class="notif1">
