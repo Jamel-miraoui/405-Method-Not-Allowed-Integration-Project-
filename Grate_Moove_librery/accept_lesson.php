@@ -27,7 +27,7 @@ if ($result->num_rows > 0) {
 	$file_path = $row["file_path"];
 	$user_id = $row["teacher_id"];
 	$department = $row["department_id"];
-	$topec = $row["topic"];
+	$topec = $row["topec"];
 	$class = $row["class_level"];
 	
 

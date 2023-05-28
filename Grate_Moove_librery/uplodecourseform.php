@@ -27,8 +27,8 @@ include 'navANDhead.php';
           </div>
 
           <div>
-          <label for="author_name">Topec:</label>
-          <input type="text" name="topec" id="topec" class="formbold-form-input"><br>
+          <label>Topec:</label>
+          <input type="text" name="topec" class="formbold-form-input"><br>
           </div>
 
           <div>

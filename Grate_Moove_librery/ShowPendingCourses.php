@@ -33,6 +33,7 @@ require_once('sessonchekadmin.php');
     <h3>Title: <?php echo $row['title']; ?></h3>
     <p>Class: <?php echo $row['class_level']; ?></p>
     <p>Department: <?php echo $row['department_id']; ?></p>
+    <p>Topec: <?php echo $row['topec']; ?></p>
     <p>uploded by: <?php
           $path = $row['teacher_id'];
           $sql2 = "SELECT * FROM users WHERE id='$path'";
