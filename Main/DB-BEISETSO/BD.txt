@@ -1,3 +1,0 @@
-SHOW DATABASES;
-DROP DATABASE db_name;
-CREATE DATABASE tutorial_database;
