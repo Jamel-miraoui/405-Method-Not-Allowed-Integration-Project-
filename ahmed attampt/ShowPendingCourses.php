@@ -46,13 +46,10 @@ require_once('sessonchekadmin.php');
 
 
        <!-- the bottons  -->
-    <form method='post' action='accept_lesson.php'>
-      <input name='lessons_id' value='<?php echo $row["id"]; ?>'>
-      <input type='submit' value='Accept' class='bbb'>
+    <a href="accept_lesson.php?id=<?php echo urlencode($row["id"]);?>">Accept</a>
     </form>
-    <form method='post' action='delete_lesson_pending.php'>
-      <input  name='lessons_id' value='<?php echo $row["id"]; ?>'>
-      <input type='submit' value='Delete' class='aaa'>
+    <a href="delete_lesson_pending.php?id=<?php echo urlencode($row["id"]);?>">Delete</a>
+   
     </form>
   </div>
 </div>

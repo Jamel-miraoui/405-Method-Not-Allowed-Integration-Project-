@@ -15,7 +15,7 @@ if ($conn->connect_error) {
 	die("Connection failed:" . $conn->connect_error);
 }
 // Retrieve the lesson information from the pending database
-$lesson_id = $_POST["lessons_id"];
+$lesson_id = $_GET["id"];
 $sql = "SELECT * FROM lessonspenting WHERE id=".$lesson_id;
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
