@@ -27,14 +27,12 @@ require_once('connbd.php');?>
             <ul>
                 <li class="nava"><a href="index.php">Home</a></li>
                 <li class="nava"><a href="books.php">Books</a></li>
-                <li class="nava"><a href="Courses.php">Courses</a></li>
-                
-                <!-- <li><a href="login.php">Login</a></li> -->
+                <li class="nava"><a href="Courses.php">Courses</a></li>  
+                <li class="nava"><a href="aboutpage.php">Aboutus</a></li>  
             </ul>
         </nav>
         <div class="user-info">
             <h3 class="user-name">
-                <a href="profile.php" class="prof">
                  <?php 
                  session_start();
                  if(isset($_SESSION['login'])){
@@ -49,7 +47,7 @@ require_once('connbd.php');?>
                     }
                 ?>
             </h3>
-            <img src="Profile-Icon-SVG-09856789.png" alt="Profile photo" class="profile-photo"></a>
+            <a href="profile.php"><img src="Profile-Icon-SVG-09856789.png" alt="Profile photo" class="profile-photo"></a>
             
         </div>
     </div>
