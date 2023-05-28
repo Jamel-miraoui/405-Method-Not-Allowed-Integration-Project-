@@ -155,32 +155,6 @@ CREATE TABLE teacheremails (
 );
 
 
-DROP TABLE IF EXISTS `student_progress`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `student_progress` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `student_id` int NOT NULL,
-  `lesson_id` int NOT NULL,
-  `progress` int NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`),
-  KEY `student_id` (`student_id`),
-  KEY `lesson_id` (`lesson_id`),
-  CONSTRAINT `student_progress_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `users` (`id`),
-  CONSTRAINT `student_progress_ibfk_2` FOREIGN KEY (`lesson_id`) REFERENCES `lessons` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `student_progress`
---
-
-LOCK TABLES `student_progress` WRITE;
-/*!40000 ALTER TABLE `student_progress` DISABLE KEYS */;
-/*!40000 ALTER TABLE `student_progress` ENABLE KEYS */;
-UNLOCK TABLES;
-
 --
 -- Table structure for table `users`
 --
