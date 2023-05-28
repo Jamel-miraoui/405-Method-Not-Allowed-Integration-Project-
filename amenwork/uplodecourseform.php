@@ -13,14 +13,6 @@ include 'navANDhead.php';
     <title>uplode book form</title>
 </head>
 <body>
-
-  <?php
-          if($_GET['msg']==1){
-            echo"<a>votre demande était envoyée à l'administrateur </a>";
-          }
-          if($_GET['msg']==2){
-            echo"<a>verifier vote ficher </a>";
-          }?>
 <div class="formbold-main-wrapper">
 
   <div class="formbold-form-wrapper">
@@ -76,11 +68,7 @@ include 'navANDhead.php';
           <div class="formbold-checkbox-wrapper">
         <label for="supportCheckbox" class="formbold-checkbox-label">
           <div class="formbold-relative">
-            <input
-              type="checkbox"
-              id="supportCheckbox"
-              class="formbold-input-checkbox"
-            />
+            
             <div class="formbold-checkbox-inner">
               <span class="formbold-opacity-0">
                 <svg
@@ -99,8 +87,13 @@ include 'navANDhead.php';
               </span>
             </div>
           </div>
-          I agree to the defined
-          <a href="#"> terms, conditions, and policies</a>
+          <?php
+          if($_GET['msg']==1){
+            echo"<a>votre demande était envoyée à l'administrateur </a>";
+          }
+          if($_GET['msg']==2){
+            echo"<a>verifier vote ficher </a>";
+          }?>
         </label>
       </div>
 

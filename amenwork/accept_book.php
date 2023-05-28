@@ -5,8 +5,8 @@ require_once('sessonchekadmin.php');
 // error_reporting(E_ALL);
 // Connect to the databases
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "sammy";
+$password = "password";
 $dbname = "greatmove_library";
 
 $conn = new mysqli($servername, $username, $password, $dbname);

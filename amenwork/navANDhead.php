@@ -9,6 +9,7 @@ require_once('connbd.php');?>
     <title>Courses</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/booksstyle.css">
+    
     <style>
 
 
@@ -27,7 +28,7 @@ require_once('connbd.php');?>
                 <li class="nava"><a href="index.php">Home</a></li>
                 <li class="nava"><a href="books.php">Books</a></li>
                 <li class="nava"><a href="Courses.php">Courses</a></li>
-                <li class="nava"><a href="logout.php">Disconnect</a></li>
+                
                 <!-- <li><a href="login.php">Login</a></li> -->
             </ul>
         </nav>

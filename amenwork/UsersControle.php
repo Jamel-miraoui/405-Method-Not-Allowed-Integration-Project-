@@ -9,13 +9,13 @@ require_once('sessonchekadmin.php');
 	<title>User Management System</title>
 </head>
 <body>
-<div class="table">
-	<form method="post" class="search">
+
+	
 		<label for="search">Search:</label>
 		<input type="text" id="search" name="search">
 		<input type="submit" value="Search">
 		<link rel="stylesheet" href="Style.css">
-	</form>
+	
 	
 	<table class="styled-table">
 		<tr>
@@ -29,8 +29,8 @@ require_once('sessonchekadmin.php');
 		<?php
 		// connect to the database (replace with your own database credentials)
 		$host = 'localhost';
-		$username = 'sammy';
-		$password = 'password';
+		$username = 'root';
+		$password = '';
 		$dbname = 'greatmove_library';
 
 		$conn = new mysqli($host, $username, $password, $dbname);
@@ -74,9 +74,55 @@ require_once('sessonchekadmin.php');
 			$conn->close();
 		?>
 	</table>
-	</div>
+
 
 	<br>
     
 </body>
+<style>
+	/* Style pour le formulaire de recherche */
+label {
+  font-weight: bold;
+}
+
+input[type="text"] {
+  padding: 5px;
+  width: 200px;
+  margin-right: 10px;
+}
+
+input[type="submit"] {
+  padding: 5px 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Style pour le tableau */
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 10px;
+  text-align: center;
+}
+
+.styled-table th {
+  background-color: gray;
+  color: white;
+}
+
+.styled-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.styled-table tr:hover {
+  background-color: #ddd;
+}
+</style>
 </html>

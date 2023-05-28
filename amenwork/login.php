@@ -10,7 +10,6 @@
   <body>
     <div class="main">
       <input type="checkbox" id="chk" aria-hidden="true" />
-
       <div class="signup">
         <form method="post" action="Src/phpFunction/signup.php">
           <label for="chk" aria-hidden="true">Sign up</label>
@@ -30,6 +29,9 @@
           <?php
           if ($_GET['msg']==3){
             echo"<p>(!) username or email alredy existes</p>";
+          }
+          if ($_GET['msg']==4){
+            echo"<p>(!) email not valid</p>";
           }
           ?>
           <?php

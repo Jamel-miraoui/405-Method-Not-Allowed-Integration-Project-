@@ -80,7 +80,7 @@ if ($stmt->rowCount() == 0) {
    
      
 
-     $insert = $db->query("INSERT INTO bookspenting (title, author, description, file_path, cover_path, user_id) VALUES ('$title', '$author_name', '$category', '$targetFile', '$coverImage', '$userID')");
+     $insert = $db->query("INSERT INTO bookspending (title, author, description, file_path, cover_path, user_id) VALUES ('$title', '$author_name', '$category', '$targetFile', '$coverImage', '$userID')");
    
      if($insert){
        $statusMsg = "The file ".$fileName. " has been uploaded successfully.";

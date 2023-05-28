@@ -49,7 +49,7 @@ if ($stmt->rowCount() == 0) {
          $targetFile = $targetDir . $fileName;
          move_uploaded_file($_FILES['pdf_file']['tmp_name'], $targetFile);
          
-         $insert = $db->query("INSERT INTO lessonspenting (title, description, file_path, teacher_id, department_id, topec, class_level) VALUES ('$title', '$description', '$targetFile','$userID', '$department','$topec', '$class')");
+         $insert = $db->query("INSERT INTO lessonspending (title, description, file_path, teacher_id, department_id, topec, class_level) VALUES ('$title', '$description', '$targetFile','$userID', '$department','$topec', '$class')");
          if($insert){
                $statusMsg = "The file ".$fileName. " has been uploaded successfully.";
 	           echo"file uploded secssefully";

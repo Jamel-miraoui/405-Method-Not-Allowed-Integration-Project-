@@ -12,19 +12,11 @@ $courses = $db->query($query)->fetchAll(PDO::FETCH_ASSOC);
 include 'navANDhead.php';
 ?>
     <a class='button' href="uplodecourseform.php"><span>&#43;</span>Add<br>Course</a>
-    <table>
-        <tr>
-            <th>Techer name</th>
-            <th>Department</th>
-            <th>Level degree</th>
-            <th>Topec</th>
-            <th>Title</th>
-            <th>Description</th>
-			<th>Read Now</th>
-        </tr>
+
+      
         <!-- dispaly al books in db secton -->
         <?php foreach ($courses as $course): ?>
-        <tr>
+        
             <?php
             $query2 = "SELECT username FROM users WHERE id = ?";
             $stmt = $db->prepare($query2);
@@ -34,9 +26,12 @@ include 'navANDhead.php';
             // Access the username value  echo $course['class_level']; 
             $username = $result['username'];
             ?>
-            <td><?php echo $result['username']; ?></td>
-            <td><?php echo $course['department_id']; ?></td>
-            <td><?php
+            <div class="course-container">
+            <div class="course">
+                <p>
+            <?php echo $result['username']; ?>
+            <?php echo $course['department_id']; ?>
+            <?php
             if ($course['class_level']>10) {
                 if ($course['class_level']==11) {
                     echo "1er Master"; 
@@ -52,16 +47,16 @@ include 'navANDhead.php';
                 }
 
             } 
-            ?></td>
-            <td><?php echo $course['topec']; ?></td>
-            <td><?php echo $course['title']; ?></td>
-            <td><?php echo $course['description']; ?></td>
-            <td><a href="<?php echo $course['file_path']; ?>">PDF File</a></td>
+            ?></p>
+            <?php echo $course['topec']; ?>
+            <h3><?php echo $course['title']; ?></h3>
+           <p> <?php echo $course['description']; ?></p>
+            <a href="<?php echo $course['file_path']; ?>">PDF File</a></td>
             <!-- the download book secton -->
 
-        </tr>
+        
         <?php endforeach; ?>
-    </table>
+
 
 </body>
 </html>

@@ -6,8 +6,8 @@ require_once('sessonchekadmin.php');
 // error_reporting(E_ALL);
 // Database configuration
 $host = "localhost";
-$username = "root";
-$password = "";
+$username = "sammy";
+$password = "password";
 $database = "greatmove_library";
 
 // Create a connection
