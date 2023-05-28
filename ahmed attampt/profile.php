@@ -164,6 +164,10 @@ error_reporting(E_ALL);
         box-shadow: 0 0 0 2px #ff6363;
     }
 
+    h2{
+        background-color: #0d1425;
+    }
+
     @media screen and (max-width: 1068px) {
         .container {
             display: table;

@@ -257,6 +257,7 @@ a {
 	height: 50px;
 	border-radius: 50%;
 	margin-left: 5%;
+	border: 3px solid black;
 }
 
 .user-info {
@@ -282,20 +283,22 @@ gap: 1px; /* Adjust the value to increase or decrease the space */
 flex: 1;
 padding: 8px 10px; /* Adjust the padding as needed */
 font-size: 16px;
-border: 1px solid #ccc;
+border: 3px solid #000000;
 border-radius: 4px;
 height: 18px; /* Adjust the height to match the search-submit button */
 width: 350px;
+
 }
 
 .search-submit {
+border: 3px solid #000000;
 padding: 8px 15px; /* Adjust the padding as needed */
 font-size: 16px;
 background-color: #505050;
 color: white;
-border: none;
+/* border: none; */
 border-radius: 4px;
-height: 36px; /* Adjust the height to match the search-input box */
+height: 39px; /* Adjust the height to match the search-input box */
 }
 
 .search-submit:hover {
