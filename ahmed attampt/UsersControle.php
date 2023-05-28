@@ -28,8 +28,8 @@ include 'navANDhead.php';
 		<?php
 		// connect to the database (replace with your own database credentials)
 		$host = 'localhost';
-		$username = 'root';
-		$password = '';
+		$username = 'sammy';
+		$password = 'password';
 		$dbname = 'greatmove_library';
 
 		$conn = new mysqli($host, $username, $password, $dbname);

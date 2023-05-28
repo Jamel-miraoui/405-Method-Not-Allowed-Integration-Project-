@@ -45,7 +45,7 @@ $stmt->execute();
 if ($stmt->rowCount() == 0) {
 
   // Upload file to server
-         $targetDir = "uploads/";
+         $targetDir = "../uploads/";
          $targetFile = $targetDir . $fileName;
          move_uploaded_file($_FILES['pdf_file']['tmp_name'], $targetFile);
          

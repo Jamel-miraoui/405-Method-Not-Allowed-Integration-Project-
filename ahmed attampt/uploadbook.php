@@ -32,7 +32,7 @@ if (isset($_FILES['pdf_file'])&&!empty($_FILES["pdf_file"]["name"])) {
   $category = $_POST['category'];
   
   // Upload file to server
-  $targetDir = "uploads/";
+  $targetDir = "../uploads/";
   $targetFile = $targetDir . $fileName;
   $fileType = pathinfo($targetFile,PATHINFO_EXTENSION);
 //uplode data to data basse 
@@ -60,9 +60,10 @@ if ($stmt->rowCount() == 0) {
      
      // Upload cover image to server
      $coverImage = "";
+     $targetDirImg = "uploads/";
      if (isset($_FILES['cover_image'])) {
        $coverFileName = basename($_FILES['cover_image']['name']);
-       $coverTargetFile = $targetDir . $coverFileName;
+       $coverTargetFile = $targetDirImg . $coverFileName;
            
           
        //test file tipe and file size

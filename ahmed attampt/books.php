@@ -26,7 +26,7 @@ $books = $db->query($query)->fetchAll(PDO::FETCH_ASSOC);
         <?php foreach ($books as $book): ?>
 
                 <div class="book">
-                <a href="<?php echo $book['file_path']; ?>"><img src="<?php echo $book['cover_path']; ?>" alt="Book 3" width="300"></a>
+                <a href="download.php?filename=<?php echo urlencode($book['file_path']);?>"><img src="<?php echo $book['cover_path']; ?>" alt="Book 3" width="300"></a>
 					<h3><?php echo $book['title']; ?></h3>
 					<p><?php echo $book['author']; ?></p>
                     
