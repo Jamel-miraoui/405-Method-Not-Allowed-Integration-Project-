@@ -33,7 +33,6 @@ require_once('connbd.php');?>
             </ul>
         </nav>
         <div class="user-info">
-            <a href="profile.php"><img src="Profile-Icon-SVG-09856789.png" alt="Profile photo" class="profile-photo"></a>
             <h3 class="user-name">
                  <?php 
                  session_start();
@@ -49,6 +48,8 @@ require_once('connbd.php');?>
                     }
                 ?>
             </h3>
+            <a href="profile.php"><img src="Profile-Icon-SVG-09856789.png" alt="Profile photo" class="profile-photo"></a>
+            
         </div>
     </div>
 </header>

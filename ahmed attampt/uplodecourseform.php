@@ -88,12 +88,12 @@ include 'navANDhead.php';
             </div>
           </div>
           <?php
-          if($_GET['msg']==1){
-            echo"<a>votre demande était envoyée à l'administrateur </a>";
-          }
-          if($_GET['msg']==2){
-            echo"<a>verifier vote ficher </a>";
-          }?>
+          // if($_GET['msg']==1){
+          //   echo"<a>votre demande était envoyée à l'administrateur </a>";
+          // }
+          // if($_GET['msg']==2){
+          //   echo"<a>verifier vote ficher </a>";
+          // }?>
         </label>
       </div>
 

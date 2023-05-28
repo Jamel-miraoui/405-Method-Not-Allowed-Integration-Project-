@@ -67,21 +67,21 @@ include 'navANDhead.php';
             </div>
           </div>
           <?php
-          if($_GET['msg']==1){
-            echo"<a>Book Alredy Exictes</a>";
-          }
-          if($_GET['msg']==2){
-            echo"<p>Invalid File Size</p>";
-          }
-          if($_GET['msg']==3){
-            echo"<p>Invalid File Tipe (PDF only)</p>";
-          }
-          if($_GET['msg']==4){
-            echo"<p>Error: No file uploaded.</p>";
-          }
-          if($_GET['msg']==5){
-            echo"<p>votre demande était envoyée à l'administrateur </p>";
-          }
+          // if($_GET['msg']==1){
+          //   echo"<a>Book Alredy Exictes</a>";
+          // }
+          // if($_GET['msg']==2){
+          //   echo"<p>Invalid File Size</p>";
+          // }
+          // if($_GET['msg']==3){
+          //   echo"<p>Invalid File Tipe (PDF only)</p>";
+          // }
+          // if($_GET['msg']==4){
+          //   echo"<p>Error: No file uploaded.</p>";
+          // }
+          // if($_GET['msg']==5){
+          //   echo"<p>votre demande était envoyée à l'administrateur </p>";
+          // }
           ?>
         </label>
       </div>

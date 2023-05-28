@@ -1,7 +1,6 @@
 <?php
 include 'navANDhead.php';
-require_once('sessonchekadmin.php');
-
+// require_once('sessonchekadmin.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -9,7 +8,7 @@ require_once('sessonchekadmin.php');
 	<title>User Management System</title>
 </head>
 <body>
-<div class="table">
+
 	<form method="post" class="search">
 		<label for="search">Search:</label>
 		<input type="text" id="search" name="search">
@@ -29,8 +28,8 @@ require_once('sessonchekadmin.php');
 		<?php
 		// connect to the database (replace with your own database credentials)
 		$host = 'localhost';
-		$username = 'sammy';
-		$password = 'password';
+		$username = 'root';
+		$password = '';
 		$dbname = 'greatmove_library';
 
 		$conn = new mysqli($host, $username, $password, $dbname);
@@ -74,9 +73,16 @@ require_once('sessonchekadmin.php');
 			$conn->close();
 		?>
 	</table>
-	</div>
+	
 
 	<br>
     
 </body>
+<style>
+
+
+
+	
+</style>
+	
 </html>

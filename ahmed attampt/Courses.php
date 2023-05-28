@@ -56,7 +56,7 @@ include 'navANDhead.php';
             <td><?php echo $course['topec']; ?></td>
             <td><?php echo $course['title']; ?></td>
             <td><?php echo $course['description']; ?></td>
-            <td><a href="<?php echo $course['file_path']; ?>">PDF File</a></td>
+            <td> <a href="download.php?filename=<?php echo urlencode($course['file_path']);?>">PDF File</a></td>
             <!-- the download book secton -->
 
         </tr>

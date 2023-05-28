@@ -1,8 +1,8 @@
 <?php 
 
     $host = 'localhost';
-    $username = 'sammy';
-    $password = 'password';
+    $username = 'root';
+    $password = '';
     $dbname = 'greatmove_library';
     
     $dsn = "mysql:host=$host;dbname=$dbname";
