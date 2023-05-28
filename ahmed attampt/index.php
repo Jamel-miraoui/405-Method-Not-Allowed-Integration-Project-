@@ -155,8 +155,8 @@ include 'navANDhead.php';
     </div>
     <div class="footer-column">
       <h3>Contact</h3>
-      <p>Email: Dsi2.2@gmail.com</p>
-      <p>Phone: 29527958</p>
+      <p>Email: ahmed.oueslati6110@gmail.com</p>
+      <p>Phone: 54906119</p>
     </div>
     <div class="footer-column">
       <h3>Follow Us</h3>
