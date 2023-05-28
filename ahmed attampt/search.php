@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-
+<link rel="stylesheet" href="Style.css">
 <?php
 // ini_set("display_errors",'1');
 // error_reporting(E_ALL);
@@ -24,7 +24,7 @@ $sql = "SELECT * FROM books WHERE title LIKE '%" . $search_term . "%' OR descrip
 $result = $conn->query($sql);
 
 if ($result && $result->num_rows > 0) {
-  echo "<table class='table'>";
+  echo "<table class='styled-table'>";
   echo "<thead><tr><th>Title</th><th>Description</th><th>Author/Department</th><th>Topec</th><th>File</th></tr></thead>";
   echo "<tbody>";
   
