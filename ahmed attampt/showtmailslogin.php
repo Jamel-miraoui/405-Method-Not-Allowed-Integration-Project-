@@ -81,7 +81,7 @@ $studentEmailsResult = $conn->query($studentEmailsQuery);
             <option value="teacheremails">Teacher Emails</option>
             <option value="studentsemails">Student Emails</option>
         </select>
-        </form><br>
+        <br>
         <button type="submit" name="addEmail">Add Email</button>
     </form></div>
     <h2>Teacher Emails</h2>
