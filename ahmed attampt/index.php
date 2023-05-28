@@ -145,9 +145,46 @@ include 'navANDhead.php';
 		</section> -->
 	</main>
 	
-	<footer>
-		<p></p>
-	</footer>
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-column">
+      <h3>About Us</h3>
+      <p>
+
+"Un site web complet pour gérer et explorer une vaste collection des livres et des cours, offrant une expérience interactive et conviviale aux utilisateurs.".</p>
+    </div>
+    <div class="footer-column">
+      <h3>Contact</h3>
+      <p>Email: Dsi2.2@gmail.com</p>
+      <p>Phone: 29527958</p>
+    </div>
+    <div class="footer-column">
+      <h3>Follow Us</h3>
+      <ul class="social-media-icons">
+  <li>
+    <a href="https://www.example.com" class="link-image">
+      <img src="https://th.bing.com/th/id/R.a9b7a4659d79bb649453f87ba64f1493?rik=EdK6SehK50AjHA&pid=ImgRaw&r=0" alt="Icone 1">
+    </a>
+  </li>
+  <li>
+    <a href="https://www.example.com" class="link-image">
+      <img src="https://clipartcraft.com/images/twitter-logo-png-green-4.png" alt="Icone 2">
+    </a>
+  </li>
+  <li>
+    <a href="https://www.example.com" class="link-image">
+      <img src="https://th.bing.com/th/id/R.c94cfefb98bd5a80337938dad7fdb2ff?rik=qJTpocjyqrAFlg&riu=http%3a%2f%2fwww.gds.or.id%2fid%2fwp-content%2fuploads%2f2020%2f11%2finstagram.png&ehk=xVFSZgRcPCQrH%2fDLlu7YHKdW%2bHIq8qKhOCKicEIpPlQ%3d&risl=&pid=ImgRaw&r=0" alt="Icone 3">
+    </a>
+  </li>
+</ul>
+
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2023 YourWebsite. All rights reserved.</p>
+  </div>
+</footer>
+
 	
 </body>
 <style>
@@ -180,6 +217,97 @@ include 'navANDhead.php';
 .book:hover {
   transform: translateX(0);
 } */
+.social-media-icons {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.social-media-icons li {
+  margin-right: 10px;
+}
+
+.social-media-icons li:last-child {
+  margin-right: 0;
+}
+
+.social-media-icons li a {
+  display: block;
+  width: 40px;
+  height: 40px;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.social-media-icons li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.footer {
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+.footer p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-column {
+  flex: 1 1 300px;
+  margin-bottom: 20px;
+
+}
+
+.footer-column h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+ 
+}
+.footer-column p {
+  font-size: 18px;
+  margin-bottom: 10px;
+  width: 500px;	
+ 
+}
+
+.social-media-icons {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.social-media-icons li {
+  display: inline-block;
+  margin-right: 10px;
+  text-align: center;
+}
+
+.social-media-icons li a {
+  color: red;
+  font-size: 24px;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  text-align: right;
+}
+
 
 </style>
 

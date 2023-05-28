@@ -1,8 +1,8 @@
 <?php 
 
     $host = 'localhost';
-    $username = 'root';
-    $password = '';
+    $username = 'sammy';
+    $password = 'password';
     $dbname = 'greatmove_library';
     
     $dsn = "mysql:host=$host;dbname=$dbname";
@@ -15,6 +15,4 @@
     } catch(PDOException $e) {
         echo "Connection failed: " . $e->getMessage();
     }
-
-
 ?>

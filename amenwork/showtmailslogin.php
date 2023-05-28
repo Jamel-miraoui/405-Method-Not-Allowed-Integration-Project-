@@ -5,18 +5,9 @@ require_once('sessonchekadmin.php');
 
 ?>
 <body>
-<a class='button' href="uplodebookform.php"><span>&#43;</span>Add<br>Email</a>
-<div classe='y'>
-
-<a class='x' href="ShowEmailteacher.php"><span></span>Email teacher</a>
-</div>
-
 <!-- <a href="" >student emails</a>
      <a href="" >tescher emails</a> -->
-	 <lable class='l'>studients Email</lable>
 <div class="table">
-
-
      <!-- <a href="" class="btn">student emails</a>
      <a href="" class="btn">tescher emails</a> -->
 	<form method="post" class="search">
@@ -36,8 +27,8 @@ require_once('sessonchekadmin.php');
 		<?php
 		// connect to the database (replace with your own database credentials)
 		$host = 'localhost';
-		$username = 'root';
-		$password = '';
+		$username = 'sammy';
+		$password = 'password';
 		$dbname = 'greatmove_library';
 
 		$conn = new mysqli($host, $username, $password, $dbname);
@@ -52,10 +43,10 @@ require_once('sessonchekadmin.php');
 			$search = $_POST['search'];
 
 			// search for users by username, email, or ID
-			$sql = "SELECT * FROM studentsemails WHERE email LIKE '%$search%' OR valid LIKE '%$search%' OR id LIKE '%$search%'";
+			$sql = "SELECT * FROM teacheremails WHERE email LIKE '%$search%' OR valid LIKE '%$search%' OR id LIKE '%$search%'";
 		} else {
 			// retrieve all users from the database
-			$sql = "SELECT * FROM studentsemails";
+			$sql = "SELECT * FROM teacheremails";
 		}
 
 			$result = $conn->query($sql);
@@ -87,51 +78,6 @@ require_once('sessonchekadmin.php');
 	</div>
 
 	<br>
-
+    
 </body>
-<style>
-	.l {
-  display: block;
-  font-size: 24px;
-  font-weight: bold;
-  text-align: center;
-  margin-top: 50px;
-}
-div.y {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.x {
-  display: inline-block;
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-  background-color: #f1f1f1;
-  color: #333;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-  margin-bottom: 10px;
-}
-
-.x span {
-  font-size: 24px;
-  display: block;
-  margin-bottom: 5px;
-}
-
-.x:hover {
-  background-color: #ddd;
-}
-
-  </style>
-
-
-
-
-
-
-</style>
 </html>
