@@ -82,7 +82,7 @@ $studentEmailsResult = $conn->query($studentEmailsQuery);
         <button type="submit" name="addEmail">Add Email</button>
     </form>
     <h2>Teacher Emails</h2>
-    <table>
+    <table class="styled-table">
         <tr>
             <th>ID</th>
             <th>Email</th>
