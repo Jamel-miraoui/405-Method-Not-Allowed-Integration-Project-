@@ -17,6 +17,8 @@ header {
 	background-color: white;
 	color: #000000;
 	padding: 0px;
+	border: 3px solid black;
+	padding-right: 3%;
 }
 
 /* a{
@@ -93,15 +95,18 @@ h3,p{
 	justify-content: center;
 	/* background-color: white; */
 	
+	
 }
 .img{
-	border-radius: 20px;
+	/* border-radius: 20px; */
 	width : 300px;
 	height : 400px;
+	
+	border: 3px solid black;
 }
 .book:hover{
 	
-	box-shadow: 0px 0px 37px #7b00808a;
+	box-shadow: 0px 0px 37px #000000;
 	
 }
 /* .book {
@@ -125,15 +130,16 @@ h3,p{
 	transform: translateY(100px);
 	transition: opacity 5s, transform 5s;
 	margin: 71px;
-	margin-top: 10px;
-	margin-bottom: 20px;
+	/* margin-top: 10px;
+	margin-bottom: 20px; */
 	padding: 10px;
 	animation: slide-in 1s ease-in-out;
 	background-color: white;
+	border: 3px solid black;
   }
   
   .book.animation {
-	opacity: 1;
+	opacity: 0;
 	transform: translateY(0);
   }
   @keyframes slide-in {
@@ -150,7 +156,7 @@ h3,p{
 	  transform: translateX(-100px);
 	}
 	100% {
-	  opacity: 1;
+	  opacity: 2;
 	  transform: translateX(0);
 	}
   }
@@ -161,7 +167,7 @@ h3,p{
 	  transform: translateX(100px);
 	}
 	100% {
-	  opacity: 1;
+	  opacity: 2;
 	  transform: translateX(0);
 	}
   }
@@ -194,7 +200,7 @@ h3,p{
   }
   
   .book:nth-child(even) {
-	animation: slideInFromRight 5s forwards;
+	animation: slideInFromRight 2s forwards;
   }
   
 /* .course {

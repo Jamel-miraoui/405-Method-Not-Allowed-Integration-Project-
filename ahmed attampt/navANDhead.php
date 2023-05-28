@@ -18,7 +18,7 @@ require_once('connbd.php');?>
 <body>
 <header>
     <div class="header-container">
-        <h1><img src="resorses/logo.png" width="190"></h1>
+        <h1><a href="index.php"><img src="resorses/logo.png" width="190"></a></h1>
         <form method="get" action="search.php" class="search-form">
             <input type="text" name="search" class="search-input" placeholder="Search...">
             <input type="submit" value="Search" class="search-submit">
