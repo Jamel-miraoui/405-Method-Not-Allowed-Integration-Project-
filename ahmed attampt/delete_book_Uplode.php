@@ -11,10 +11,10 @@ if ($conn->connect_error) {
 	die("Connection failed: " . $conn->connect_error);
 }
 // Retrieve the book ID from the form data
-$book_id = $_POST["book_id"];
+$book_id = $_GET["id"];
 // Delete the book from the database
 $sql = "DELETE FROM books WHERE id=".$book_id;
-if ($conn->query($sql) === TRUE) {
+if ($conn->query($sql) == TRUE) {
 	echo "Book deleted successfully";
 	header("Location: ShowUplodedBooks.php");
 } else {

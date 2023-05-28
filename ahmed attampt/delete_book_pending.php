@@ -11,7 +11,7 @@ if ($conn->connect_error) {
 	die("Connection failed: " . $conn->connect_error);
 }
 // Retrieve the book ID from the form data
-$book_id = $_POST["book_id"];
+$book_id = $_GET["id"];
 // Delete the book from the database
 $sql = "DELETE FROM bookspenting WHERE id=".$book_id;
 if ($conn->query($sql) === TRUE) {

@@ -34,24 +34,20 @@ require_once('sessonchekadmin.php');
           <img src="<?php echo $row['cover_path']; ?>" alt="Book 3">
           <h3><?php echo $row['title']; ?></h3>
           <p><?php echo $row['author']; ?></p>
-          <p><?php
-              $userid = $row['user_id'];
-              $sqlid = "SELECT username FROM users where id=$userid";
-              $resultid = $conn->query($sqlid);
-              $row = $resultid->fetch_assoc();
-              $username = $row['username'];
-              echo "Upload By: " . $username;
-              ?>
-          </p>
-          <a href="<?php echo $row['file_path']; ?>">PDF File</a>
-          <form method='post' action='accept_book.php'>
-            <input type='hidden' name='book_id' value='<?php echo $row["id"]; ?>'>
-            <input type='submit' value='Accept' class='bbb'>
-          </form>
-          <form method='post' action='delete_book_pending.php'>
-            <input type='hidden' name='book_id' value='<?php echo $row["id"]; ?>'>
-            <input type='submit' value='Delete' class='aaa'>
-          </form>
+         <p>uploded by: <?php
+          $path = $row['user_id'];
+          $sql2 = "SELECT * FROM users WHERE id='$path'";
+          $result2 = $conn->query($sql2);
+          if ($result2->num_rows > 0){
+          while($row2 = $result2->fetch_assoc()){
+            echo $row2['username'];
+          }}else {echo "error";} ?></p>
+           <!-- get book by downald  -->
+          <a href="download.php?filename=<?php echo urlencode($row['file_path']);?>">PDF File</a>
+            <!-- rerouting to action performence  -->
+          <a href="accept_book.php?id=<?php echo urlencode($row["id"]);?>">Accept</a>
+          <a href='delete_book_pending.php?id=<?php echo urlencode($row["id"]);?>'>Delete</a>
+        
         </div>
       </div>
 

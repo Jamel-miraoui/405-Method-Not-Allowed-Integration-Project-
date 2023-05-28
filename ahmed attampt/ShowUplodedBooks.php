@@ -30,14 +30,18 @@ require_once('sessonchekadmin.php');
     <img src="<?php echo $row['cover_path']; ?>" alt="Book 3">
     <h3><?php echo $row['title']; ?></h3>
     <p><?php echo $row['author']; ?></p>
-    <a href="<?php echo $row['file_path']; ?>">PDF File</a>
-    <form method='post' action=''>
-      <input name='book_id' value='<?php echo $row["id"]; ?>'>
-     
-    </form>
-    <form method='post' action='delete_book_Uplode.php'>
-      <input name='book_id' value='<?php echo $row["id"]; ?>'>
-      <input type='submit' value='Delete' class='aaa'>
+    <p>uploded by: <?php
+          $path = $row['user_id'];
+          $sql2 = "SELECT * FROM users WHERE id='$path'";
+          $result2 = $conn->query($sql2);
+          if ($result2->num_rows > 0){
+          while($row2 = $result2->fetch_assoc()){
+            echo $row2['username'];
+          }}else {echo "error";} ?></p>
+    <a href="download.php?filename=<?php echo urlencode($row['file_path']);?>">PDF File</a>
+
+    <a href='delete_book_Uplode.php?id=<?php echo urlencode($row["id"]);?>'>Delete</a>
+
     </form>
   </div>
 </div>

@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 	die("Connection failed:" . $conn->connect_error);
 }
 // Retrieve the book information from the pending database
-$book_id = $_POST["book_id"];
+$book_id = $_GET["id"];
 $sql = "SELECT * FROM bookspenting WHERE id=".$book_id;
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {

@@ -1,6 +1,6 @@
 <?php
-include 'navANDhead.php';
-require_once('sessonchekadmin.php');
+// include 'navANDhead.php';
+// require_once('sessonchekadmin.php');
 
 
 ?>
