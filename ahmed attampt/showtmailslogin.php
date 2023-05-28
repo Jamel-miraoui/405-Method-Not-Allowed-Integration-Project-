@@ -1,7 +1,7 @@
 <?php
 
-// error_reporting(E_ALL);
-// ini_set('display_errors', 1);
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 include 'navANDhead.php';
 require_once('sessonchekadmin.php');
@@ -70,17 +70,20 @@ $studentEmailsResult = $conn->query($studentEmailsQuery);
 </head>
 <body>
     <h1>Email Management</h1>
+    <div class="add">
     <h2>Add Email</h2>
     <form method="POST" action="">
         <label for="email">Email:</label>
         <input type="email" name="email" id="email" required>
+        <br><br>
         <label for="table">Table:</label>
         <select name="table" id="table">
             <option value="teacheremails">Teacher Emails</option>
             <option value="studentsemails">Student Emails</option>
         </select>
+        </form><br>
         <button type="submit" name="addEmail">Add Email</button>
-    </form>
+    </form></div>
     <h2>Teacher Emails</h2>
     <table class="styled-table">
         <tr>
@@ -105,7 +108,7 @@ $studentEmailsResult = $conn->query($studentEmailsQuery);
     </table>
 
     <h2>Student Emails</h2>
-    <table>
+    <table class="styled-table">
         <tr>
             <th>ID</th>
             <th>Email</th>

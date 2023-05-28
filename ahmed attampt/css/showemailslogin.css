@@ -22,10 +22,13 @@ body {
   label {
     display: block;
     margin-bottom: 5px;
+    background-color: #ffffff;
+    margin-left: 500px;
+    margin-right: 500px;
   }
   
   input[type="email"] {
-    width: 300px;
+    width: 290px;
     padding: 5px;
   }
   
@@ -36,10 +39,12 @@ body {
   
   button {
     padding: 5px 10px;
-    background-color: #4CAF50;
+    background-color: #313131;
     color: white;
     border: none;
     cursor: pointer;
+    height: 35px;
+    width: 200px;
   }
   
   table {
@@ -55,7 +60,7 @@ body {
   }
   
   table th {
-    background-color: #4CAF50;
+    background-color: #a5a5a5;
     color: white;
   }
   
@@ -66,4 +71,14 @@ body {
   table tr:hover {
     background-color: #ddd;
   }
-  
+  .add{
+
+    text-align: center;
+
+  }
+  .styled-table tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+.styled-table tr:nth-of-type(odd) {
+  background-color: #ffffff;
+}

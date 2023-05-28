@@ -307,3 +307,14 @@ background-color: #acacac;
 .prof{
 	color : black;
 }
+.map{
+	align-items: center;
+	text-align: center;
+	margin-left: 50px;
+}
+.footer-bottom{
+
+	text-align: center;
+	align-items: center;
+
+}

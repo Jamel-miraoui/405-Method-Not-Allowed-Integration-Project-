@@ -212,7 +212,7 @@ a {
 .form-update .tel-number-field:focus, 
 .form-update .textarea-field:focus,  
 .form-update .select-field:focus{
-	border: 1px solid #0C0;
+	border: 1px solid rgb(39, 39, 39);
 }
 .form-update .textarea-field{
 	height:100px;
@@ -235,4 +235,8 @@ a {
 .form-update input[type=button]:hover{
 	background: #EA7B00;
 	color: #fff;
+}
+.map{
+	align-items: center;
+	text-align: center;
 }

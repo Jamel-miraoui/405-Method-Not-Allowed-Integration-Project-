@@ -149,8 +149,12 @@ include 'navANDhead.php';
 	</main>
 	
 <footer class="footer">
+<div class="map">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12943.686705064538!2d10.6143486!3d35.8018561!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fd8aaf32a4647f%3A0x7ae14f2d2c358385!2sInstitut%20Sup%C3%A9rieur%20des%20Etudes%20Technologiques%20de%20Sousse!5e0!3m2!1sfr!2stn!4v1685298652941!5m2!1sfr!2stn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe>  
+	</div>
   <div class="footer-content">
-    <div class="footer-column">
+	
+	<div class="footer-column">
       <h3>About Us</h3>
       <p>
 
@@ -158,8 +162,12 @@ include 'navANDhead.php';
     </div>
     <div class="footer-column">
       <h3>Contact</h3>
-      <p>Email: ahmed.oueslati6110@gmail.com</p>
-      <p>Phone: 54906119</p>
+      <p>Email: mohamedgrami.b@gmail.com</p>
+	  <p>Email: jamel.miraoui.sl@gmail.com</p>
+	  <p>Email: ahmed.oueslati6110@gmail.com</p>
+      <p>Phone: 22233515</p>
+	  <p>Phone: 23690209</p>
+	  <p>Phone: 54906119</p>
     </div>
     <div class="footer-column">
       <h3>Follow Us</h3>
