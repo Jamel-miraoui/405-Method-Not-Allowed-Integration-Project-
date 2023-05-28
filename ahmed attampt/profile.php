@@ -283,7 +283,7 @@ error_reporting(E_ALL);
                 </div>
             </div>
             <br><br><br><br>
-            <h1>Files Pendding</h1>
+            <h1>Files Pending</h1>
             <div>
                 <div id="courses">
                     <h2>Courses:</h2>
