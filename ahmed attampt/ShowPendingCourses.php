@@ -30,12 +30,19 @@ require_once('sessonchekadmin.php');
     
     <!--  -->
     
-    <h3><?php echo $row['title']; ?></h3>
-    <p><?php echo $row['class_level']; ?></p>
-    <p><?php echo $row['department_id']; ?></p>
-    <p><?php echo $row['topec']; ?></p>
+    <h3>Title: <?php echo $row['title']; ?></h3>
+    <p>Class: <?php echo $row['class_level']; ?></p>
+    <p>Department: <?php echo $row['department_id']; ?></p>
+    <p>uploded by: <?php
+          $path = $row['teacher_id'];
+          $sql2 = "SELECT * FROM users WHERE id='$path'";
+          $result2 = $conn->query($sql2);
+          if ($result2->num_rows > 0){
+          while($row2 = $result2->fetch_assoc()){
+            echo $row2['username'];
+          }}else {echo "error";} ?></p>
    
-    <a href="<?php echo $row['file_path']; ?>">PDF File</a>
+   <a href="download.php?filename=<?php echo urlencode($row['file_path']);?>">PDF File</a>
 
 
        <!-- the bottons  -->
