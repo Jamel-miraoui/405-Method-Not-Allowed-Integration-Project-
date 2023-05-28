@@ -4,7 +4,7 @@ body {
 	font-family: Arial, sans-serif;
 	/* background: linear-gradient(to top, #e1fdff, #f9ffa4); */
 	background-color: white;
-	background-image: url(../Src/assets/main.avif);
+	background-image: url(../Src/assets/main.png);
 	/* background-repeat: no-repeat; */
 	background-size: 290px;
 	/* opacity: 70%; */
@@ -79,12 +79,10 @@ h2 {
 	justify-content: center;
 }
 h3,p{
-
 	font-family:Verdana;
 	margin: auto;
 	width: 25%;
 	padding: 10px;
-
 }
 
 
@@ -130,8 +128,8 @@ h3,p{
 	transform: translateY(100px);
 	transition: opacity 5s, transform 5s;
 	margin: 71px;
-	/* margin-top: 10px;
-	margin-bottom: 20px; */
+	margin-top: 10px;
+	margin-bottom: 20px;
 	padding: 10px;
 	animation: slide-in 1s ease-in-out;
 	background-color: white;
