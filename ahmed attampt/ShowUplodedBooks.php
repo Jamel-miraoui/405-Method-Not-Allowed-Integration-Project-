@@ -2,7 +2,7 @@
 include 'navANDhead.php';
 require_once('sessonchekadmin.php');
 ?>
-	<h1>List of Pending Books</h1>
+	<h1>List of Uploded Books</h1>
 	<table>
 		
 		<?php

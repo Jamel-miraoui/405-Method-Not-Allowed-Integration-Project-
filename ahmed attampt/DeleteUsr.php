@@ -23,7 +23,7 @@ $id = $_GET["id"];
 // checking if the id exists
 if ($sql = "SELECT * FROM users WHERE id='$id' " ){
     
-    $sql5 ="DELETE FROM bookspenting WHERE teacher_id= '$id'";
+    $sql5 ="DELETE FROM bookspenting WHERE user_id= '$id'";
     $sql4 ="DELETE FROM lessonspenting WHERE teacher_id= '$id'";
     $sql1 ="DELETE FROM lessons WHERE teacher_id= '$id'";
     $sql2 ="DELETE FROM books WHERE user_id = '$id'";
