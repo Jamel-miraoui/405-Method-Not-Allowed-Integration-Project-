@@ -28,6 +28,7 @@ include 'navANDhead.php';
 				</div>
 				
 			</div>
+			<h2>Best suggestions</h2>
 			<div class="book-container">
 				<div class="book">
 					<img src="resorses/p4.jpg" alt="Book 1" width="300" class="img">
@@ -51,6 +52,7 @@ include 'navANDhead.php';
 				</div>
 				
 			</div>
+			<h2>New authors</h2>
 			<div class="book-container">
 				<div class="book">
 					<img src="resorses/p4.jpg" alt="Book 1" width="300" class="img">
@@ -74,6 +76,7 @@ include 'navANDhead.php';
 				</div>
 				
 			</div>
+			<h2>Must Read</h2>
 			<div class="book-container">
 				<div class="book">
 					<img src="resorses/p4.jpg" alt="Book 1" width="300" class="img">
@@ -95,8 +98,8 @@ include 'navANDhead.php';
 					<h3>Book 3 Title</h3>
 					<p>Author Name</p>
 				</div>
-				
 			</div>
+			<h2>Learn</h2>
 			<div class="book-container">
 				<div class="book">
 					<img src="resorses/p4.jpg" alt="Book 1" width="300" class="img">
