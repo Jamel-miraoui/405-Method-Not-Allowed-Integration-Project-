@@ -211,11 +211,11 @@ error_reporting(E_ALL);
                 ?>
                     <li>
                         <a href="UsersControle.php"><input type="button" value="User Manager"></a>
-                        <a href="ShowPendingBooks.php"><input type="button" value="Manage Book's Panding"></a>
-                        <a href="ShowPendingCourses.php"><input type="button" value="manage Courses Panding"></a>
-                        <a href="ShowUplodedBooks.php"><input type="button" value="manage Uploded Books"></a>
-                        <a href="ShowUplodedCourses.php"><input type="button" value="manage Uploded Courses"></a>
-                        <a href="showtmailslogin.php"><input type="button" value="manage acsses emails"></a>
+                        <a href="ShowPendingBooks.php"><input type="button" value="Manage Books Pending"></a>
+                        <a href="ShowPendingCourses.php"><input type="button" value="Manage Courses Pending"></a>
+                        <a href="ShowUplodedBooks.php"><input type="button" value="Manage Uploaded Books"></a>
+                        <a href="ShowUplodedCourses.php"><input type="button" value="Manage Uploaded Courses"></a>
+                        <a href="showtmailslogin.php"><input type="button" value="Manage access to emails"></a>
 
                         <!-- <a href="ShowUplodedCourses.php"><input type="button" value="manage Courses upload"></a> -->
                     </li>
