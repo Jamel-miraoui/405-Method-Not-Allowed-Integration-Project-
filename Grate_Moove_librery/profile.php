@@ -230,14 +230,13 @@ error_reporting(E_ALL);
             </ul>
         </div>
         <div class="About">
-            <h1>DNS Traffic DNS</h1>
+            <h1>Activities</h1>
             <div>
                 <div id="courses">
                     <h2>Courses:</h2>
                     <table>
                         <thead>
                             <tr>
-
                                 <th>Title</th>
                                 <th>Description</th>
                                 <th>Created At</th>
