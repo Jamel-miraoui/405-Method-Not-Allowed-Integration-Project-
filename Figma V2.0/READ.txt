@@ -1,2 +1,0 @@
-This is just a template, when creating the website this template will be used in all pages of the websiet.
-its just a figma file and an svg its doesnt content any functions.
