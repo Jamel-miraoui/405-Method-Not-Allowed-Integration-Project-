@@ -80,8 +80,11 @@ html {
 
 <div class="about-section">
   <h1>About Us Page</h1>
-  <p>Some text about who we are and what we do.</p>
-  <p>Resize the browser window to see that this page is responsive by the way.</p>
+  <p></p>
+  <p>Bibliothèque numérique
+Plateforme en ligne
+L'objectif principal du projet serait de créer une plateforme de bibliothèque numérique pour les étudiants qui répondrait à leurs besoins en matière d'accès facile à des ressources de qualité pour leurs études et leurs recherches
+.</p>
 </div>
 
 <h2 style="text-align:center">Our Team</h2>
@@ -90,10 +93,9 @@ html {
     <div class="card">
       <img src="/resorses/IMG_0651.JPG" alt="Jane" style="width:100%">
       <div class="container">
-        <h2>Jane Doe</h2>
-        <p class="title">CEO & Founder</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>jane@example.com</p>
+        <h2>Oueslati Ahmed</h2>
+        <p class="title">IT student at iset sousse</p>
+        <p>ahmed.oueslati6110@gmail.com</p>
         <p><button class="button">Contact</button></p>
       </div>
     </div>
@@ -103,10 +105,9 @@ html {
     <div class="card">
       <img src="/resorses/team2.jpg" alt="Mike" style="width:100%">
       <div class="container">
-        <h2>Mike Ross</h2>
-        <p class="title">Art Director</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>mike@example.com</p>
+        <h2>Miraoui Jamel</h2>
+        <p class="title"></p>
+        <p>jamel.miraoui.sl@gmail.com</p>
         <p><button class="button">Contact</button></p>
       </div>
     </div>
@@ -116,10 +117,9 @@ html {
     <div class="card">
       <img src="/resorses/team3.jpg" alt="John" style="width:100%">
       <div class="container">
-        <h2>John Doe</h2>
-        <p class="title">Designer</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>john@example.com</p>
+        <h2>Mohamed amin grami</h2>
+        <p class="title"></p>
+        <p>mohamedgrami32@gmail.com</p>
         <p><button class="button">Contact</button></p>
       </div>
     </div>
@@ -130,10 +130,9 @@ html {
     <div class="card">
       <img src="/resorses/team4.jpg" alt="Mike" style="width:100%">
       <div class="container">
-        <h2>Mike Ross</h2>
-        <p class="title">Art Director</p>
-        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>mike@example.com</p>
+        <h2>Amen allah blhaj smlema</h2>
+        <p class="title"></p>
+        <p>amenbhs09@gmail.com </p>
         <p><button class="button">Contact</button></p>
       </div>
     </div>
